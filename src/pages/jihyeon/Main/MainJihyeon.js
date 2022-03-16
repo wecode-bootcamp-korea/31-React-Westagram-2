@@ -2,14 +2,14 @@
 import React from 'react';
 import '../../../styles/common.scss';
 import './MainJihyeon.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function MainJihyeon() {
   const navigate = useNavigate();
 
-  // const goToMain = () => {
-  //   navigate('/main-jihyeon');
-  // };
+  const goToMain = () => {
+    navigate('/main-jihyeon');
+  };
 
   const goToLogin = () => {
     navigate('/Login-jihyeon');
