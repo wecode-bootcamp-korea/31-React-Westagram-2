@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import LoginMinju from './pages/minju/Login/Login';
-import MainMinju from './pages/minju/Main/Main';
-import LoginYonghyeon from './pages/yonghyeon/Login/Login';
-import MainYonghyeon from './pages/yonghyeon/Main/Main';
-import LoginJihyeon from './pages/jihyeon/Login/Login';
-import MainJihyeon from './pages/jihyeon/Main/Main';
-import LoginHyeseong from './pages/hyeseong/Login/Login';
-import MainHyeseong from './pages/hyeseong/Main/Main';
+import LoginMinju from './pages/minju/Login/LoginMinju';
+import MainMinju from './pages/minju/Main/MainMinju';
+import LoginYonghyeon from './pages/yonghyeon/Login/LoginYonghyeon';
+import MainYonghyeon from './pages/yonghyeon/Main/MainYonghyeon';
+import LoginJihyeon from './pages/jihyeon/Login/LoginJihyeon';
+import MainJihyeon from './pages/jihyeon/Main/MainJihyeon';
+import LoginHyeseong from './pages/hyeseong/Login/LoginHyeseong';
+import MainHyeseong from './pages/hyeseong/Main/MainHyeseong';
 
 function Router() {
   return (
