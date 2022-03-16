@@ -10,7 +10,8 @@ function LoginJihyeon() {
   };
 
   return (
-    <div className="loginJihyeon" onClick={goToMain}>
+    <div className="loginJihyeon">
+      <div className="outsideWindow" onClick={goToMain} />
       <form className="loginWindow">
         <span className="logoForLoginWindow">Westagram</span>
         <input type="text" className="idInputField" placeholder="메일주소" />
