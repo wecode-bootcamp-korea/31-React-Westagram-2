@@ -1,0 +1,106 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/avatar.scss';
+
+.main__right {
+  position: sticky;
+  top: 100px;
+  right: 0;
+  width: 293px;
+  height: 100vh;
+  padding: 0px 0px 30px;
+
+  /* MAIN RIGHT */
+  .myId {
+    display: flex;
+    align-items: center;
+  }
+
+  .myId .img__container {
+    width: 45px;
+    height: 45px;
+  }
+
+  .id__container {
+    width: 180px;
+    padding: 10px;
+  }
+
+  .avatar__description {
+    display: block;
+    margin-top: 2px;
+    color: $color-dark-grey;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+
+  /* Story & recommendations*/
+  .story,
+  .recommendations {
+    height: 200px;
+    padding: 15px;
+    margin-top: 12px;
+    background-color: white;
+    border: 1px solid $color-border-grey;
+    overflow: hidden;
+  }
+
+  .story__header,
+  .recommendations__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__text {
+    color: $color-dark-grey;
+    font-weight: 600;
+  }
+
+  .header__seeAll {
+    font-weight: 800;
+  }
+
+  .story__items__item,
+  .recommendations__items__item,
+  .searched__items__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .follow {
+    position: absolute;
+    right: -5px;
+  }
+
+  /* more information */
+
+  .moreInfos {
+    margin-top: 12px;
+  }
+
+  .infolists li {
+    display: inline-block;
+    margin: 1px 0px;
+  }
+
+  .infolists a {
+    color: $color-dark-grey;
+  }
+
+  .infolists li::after {
+    content: '·';
+    margin-left: 2.75px;
+    color: #c7c7c7;
+  }
+
+  .infolists li:last-child::after {
+    content: '';
+  }
+
+  .copyright {
+    margin-top: 20px;
+    color: $color-dark-grey;
+  }
+}

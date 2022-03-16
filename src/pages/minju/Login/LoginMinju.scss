@@ -1,5 +1,9 @@
 @import '../../../styles/variables.scss';
 
+button {
+  @include button();
+}
+
 body {
   background-color: $color-grey;
 }
