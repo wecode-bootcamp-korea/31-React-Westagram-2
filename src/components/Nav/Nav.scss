@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+
+
+.nav {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid $color-border-grey;
+  z-index: 1;
+
+  .navbar {
+    position: relative;
+    @include center();
+    width: 980px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: white;
+
+    .navbar__logo {
+      display: flex;
+      width: 33%;
+      font-size: 24px;
+      font-family: lobster;
+
+      .navbar__logo__text {
+        border-left: 2px solid black;
+        margin-left: 13px;
+        padding-left: 13px;
+      }
+    }
+
+    .navbar__search {
+      position: relative;
+      @include center();
+      width: 33%;
+      font-size: $font-regular;
+
+      .navbar__searchBar {
+        width: 250px;
+        padding: 10px 40px;
+        border: none;
+        border-radius: 3px;
+        background-color: #efefef;
+      }
+
+      .searchIcon {
+        position: absolute;
+        left: 50px;
+        top: 10px;
+        color: $color-dark-grey;
+      }
+    }
+
+    .navbar__moreFunctions {
+      display: flex;
+      justify-content: flex-end;
+      width: 33%;
+
+      i {
+        margin-left: 15px;
+        padding: 5px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+    }
+  }
+}

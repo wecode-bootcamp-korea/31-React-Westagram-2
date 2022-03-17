@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Comment from './components/Comment';
 import './MainYonghyeon.scss';
+import Nav from '../../../components/Nav/Nav';
 
 const Main = () => {
   const [comment, setComment] = useState([]);
@@ -23,26 +24,7 @@ const Main = () => {
 
   return (
     <main>
-      <header className="header">
-        <nav className="nav">
-          <div className="navTitle">
-            <div className="logo" />
-            <div className="divide" />
-            <h1>Westagram</h1>
-          </div>
-          <div className="navSearchBar">
-            <div className="logo" />
-            <input className="navSearchBarInput" placeholder="검색" />
-          </div>
-          <div>
-            <ul className="navUl">
-              <li className="explore" />
-              <li className="liked" />
-              <li className="profile" />
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <Nav />
       <section className="section">
         <section className="sectionLeft">
           <div className="sectionLeft__header">
