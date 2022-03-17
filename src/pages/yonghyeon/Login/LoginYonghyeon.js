@@ -19,6 +19,16 @@ const Login = () => {
     });
   };
 
+  const handleOnClick = () => {
+    navigate('/main-yonghyeon');
+  };
+
+  const handleOnKeyPress = e => {
+    if (e.key === 'Enter') {
+      handleOnClick();
+    }
+  };
+
   const isValid = inputValue.id.includes('@') && inputValue.pw.length >= 5;
 
   return (
@@ -35,6 +45,7 @@ const Login = () => {
               placeholder="전화번호, 사용자 이름 또는 이메일"
               value={inputValue.id}
               onChange={handleInput}
+              onKeyPress={handleOnKeyPress}
             />
             <input
               className="loginPwInput"
@@ -43,15 +54,14 @@ const Login = () => {
               placeholder="비밀번호"
               value={inputValue.pw}
               onChange={handleInput}
+              onKeyPress={handleOnKeyPress}
             />
             <input
               className="loginBtn"
               type="button"
               value="로그인"
               disabled={!isValid}
-              onClick={() => {
-                navigate('/main-yonghyeon');
-              }}
+              onClick={handleOnClick}
             />
           </form>
 

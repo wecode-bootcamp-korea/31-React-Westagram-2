@@ -1,9 +1,9 @@
 const Comment = ({ comment }) => {
-  const handleComment = comment.map((item, i) => {
+  const handleComment = comment.map((commentItem, i) => {
     return (
       <li>
         <span className="commentId">sunntfterrain_ &nbsp;</span>
-        {item}
+        {commentItem}
       </li>
     );
   });
