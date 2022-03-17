@@ -72,7 +72,18 @@ const Main = () => {
               <div className="like__img" />
               <span>sunny외 1명이 좋아합니다.</span>
             </div>
-            <div className="sectionLeft__footer__comment" />
+            <div className="sectionLeft__footer__comment">
+              <ul>
+                {comment.map((item, i) => {
+                  return (
+                    <li>
+                      <span className="commentId">sunntfterrain_ &nbsp;</span>
+                      {item}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
             <div className="sectionLeft__footer_commentInput">
               <form className="commentForm">
                 <input
