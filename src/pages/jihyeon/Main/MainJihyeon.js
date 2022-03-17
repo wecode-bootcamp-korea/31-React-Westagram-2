@@ -3,6 +3,8 @@ import React from 'react';
 import '../../../styles/common.scss';
 import './MainJihyeon.scss';
 import { useNavigate } from 'react-router-dom';
+import Nav from '../../../components/Nav/Nav';
+import Footer from '../Footer/FooterJihyeon';
 
 function MainJihyeon() {
   const navigate = useNavigate();
@@ -21,6 +23,7 @@ function MainJihyeon() {
 
   return (
     <main className="main">
+      <Nav />
       <article className="mainLeft">
         <section className="articleProfile">
           <img
@@ -231,6 +234,7 @@ function MainJihyeon() {
           </section>
         </section>
       </div>
+      <Footer />
     </main>
   );
 }
