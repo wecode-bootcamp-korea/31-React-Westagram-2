@@ -429,3 +429,15 @@
 .commentId {
   font-weight: bold;
 }
+
+@media screen and (max-width: 920px) {
+  .asideContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .navSearchBar {
+    opacity: 0;
+  }
+}

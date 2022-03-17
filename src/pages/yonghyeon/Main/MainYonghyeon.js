@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Comment from './components/Comment';
 import './MainYonghyeon.scss';
 
 const Main = () => {
@@ -73,16 +73,7 @@ const Main = () => {
               <span>sunny외 1명이 좋아합니다.</span>
             </div>
             <div className="sectionLeft__footer__comment">
-              <ul>
-                {comment.map((item, i) => {
-                  return (
-                    <li>
-                      <span className="commentId">sunntfterrain_ &nbsp;</span>
-                      {item}
-                    </li>
-                  );
-                })}
-              </ul>
+              <Comment comment={comment} />
             </div>
             <div className="sectionLeft__footer_commentInput">
               <form className="commentForm">
