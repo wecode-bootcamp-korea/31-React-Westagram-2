@@ -1,7 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function LoginYonghyeon() {
-  return <div>test page</div>;
-}
+import './LoginYonghyeon.scss';
 
-export default LoginYonghyeon;
+const Login = () => {
+  const navigate = useNavigate();
+
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    pw: '',
+  });
+
+  const handleInput = e => {
+    const { value, name } = e.target;
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    });
+  };
+
+  return (
+    <div className="login">
+      <section>
+        <div className="loginContainer">
+          <h1>Westagram</h1>
+
+          <form>
+            <input
+              className="loginIdInput"
+              type="text"
+              name="id"
+              placeholder="전화번호, 사용자 이름 또는 이메일"
+              value={inputValue.id}
+              onChange={handleInput}
+            />
+            <input
+              className="loginPwInput"
+              type="password"
+              name="pw"
+              placeholder="비밀번호"
+              value={inputValue.pw}
+              onChange={handleInput}
+            />
+            <input
+              className="loginBtn"
+              type="button"
+              value="로그인"
+              disabled
+              onClick={() => {
+                navigate('/main');
+              }}
+            />
+          </form>
+
+          <a className="loginTag" herf="#">
+            비밀번호를 잊으셨나요?
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Login;
