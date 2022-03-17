@@ -19,6 +19,8 @@ const Login = () => {
     });
   };
 
+  const isValid = inputValue.id.includes('@') && inputValue.pw.length >= 5;
+
   return (
     <div className="login">
       <section>
@@ -46,9 +48,9 @@ const Login = () => {
               className="loginBtn"
               type="button"
               value="로그인"
-              disabled
+              disabled={!isValid}
               onClick={() => {
-                navigate('/main');
+                navigate('/main-yonghyeon');
               }}
             />
           </form>
