@@ -43,9 +43,10 @@ function Feed() {
               src="/images/minju/profile2.jpeg"
             />
           </div>
+          <div>
             <span className="avatar__id">aineworld</span>님 <b>외 10명</b>이
             좋아합니다.
-          </span>
+          </div>
         </div>
       </div>
 

@@ -22,9 +22,16 @@ button {
         padding-left: 10px;
       }
     }
+  }
 
-    .feed__image__container {
-      height: 600px;
+  .feed__image__container {
+    height: 600px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid $color-border-grey;
     }
   }
 
@@ -51,6 +58,10 @@ button {
       .img__container {
         width: 25px;
         height: 25px;
+      }
+
+      .avatar__id {
+        margin-left: 4px;
       }
     }
   }

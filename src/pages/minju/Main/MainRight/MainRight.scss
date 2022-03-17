@@ -13,25 +13,25 @@
   .myId {
     display: flex;
     align-items: center;
+  }
 
-    .img__container {
-      width: 45px;
-      height: 45px;
-    }
+  .img__container {
+    width: 45px;
+    height: 45px;
+  }
 
-    .id__container {
-      width: 180px;
-      padding: 10px;
+  .id__container {
+    width: 180px;
+    padding: 10px;
 
-      .avatar__description {
-        display: block;
-        margin-top: 2px;
-        color: $color-dark-grey;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        font-weight: 600;
-      }
+    .avatar__description {
+      display: block;
+      margin-top: 2px;
+      color: $color-dark-grey;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 600;
     }
   }
 
@@ -50,6 +50,7 @@
     .recommendations__header {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 10px;
 
       .header__text {
         color: $color-dark-grey;
@@ -58,6 +59,7 @@
 
       .header__seeAll {
         font-weight: 800;
+        color: $color-dark-grey;
       }
     }
 

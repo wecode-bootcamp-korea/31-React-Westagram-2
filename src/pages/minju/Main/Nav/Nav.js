@@ -3,7 +3,7 @@ import '../Nav/Nav.scss';
 
 function Nav() {
   return (
-    <nav>
+    <nav className="nav">
       <div className="navbar">
         <div className="navbar__logo">
           <i className="fa-brands fa-instagram" />
