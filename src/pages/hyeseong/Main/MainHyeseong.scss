@@ -1,0 +1,267 @@
+@import '../../../styles/variables.scss';
+
+body {
+  background-color: whitesmoke;
+
+  .main-contents {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+    width: 935px;
+    margin: auto;
+
+    .feeds {
+      width: 614px;
+      height: auto;
+      border: 1px solid gainsboro;
+      background-color: white;
+    }
+  }
+}
+
+.icons-left .fa-comment {
+  transform: scaleX(-1);
+}
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 600px;
+}
+.main-right-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  width: 100%;
+  height: auto;
+}
+.stories {
+  width: inherit;
+  height: 240px;
+  border: 1px solid gainsboro;
+  background-color: white;
+
+  .user-cell-container-stories {
+    height: 200px;
+    overflow-x: scroll;
+  }
+}
+
+.recommend-freinds {
+  width: inherit;
+  height: 200px;
+  border: 1px solid gainsboro;
+  background-color: white;
+
+  .user-cell-container-recommend {
+    height: 160px;
+    overflow-y: scroll;
+  }
+}
+
+.copy {
+  margin-top: 16px;
+  font-size: 8px;
+  color: gray;
+}
+
+.article-iamge {
+  width: inherit;
+  height: 600px;
+  padding-right: 0;
+}
+
+.iamge-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-cell {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 56px;
+  margin: 8px 16px;
+
+  .porfile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  .user-cell-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 16px;
+
+    .user-id {
+      font-size: large;
+      font-weight: 600;
+    }
+    .user-cell-desc {
+      font-size: small;
+      text-align: left;
+      color: gray;
+    }
+  }
+  .fa-ellipsis {
+    position: absolute;
+    right: 0px;
+  }
+}
+
+.article-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  .icons-left {
+    margin: 0 8px;
+    i {
+      margin: 0px 8px;
+    }
+  }
+
+  .fa-bookmark {
+    margin: 0px 16px;
+  }
+}
+
+.article-comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: inherit;
+  height: auto;
+
+  .likes-count {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4px;
+
+    span {
+      font-weight: 600;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      margin-left: 16px;
+    }
+  }
+}
+
+.main-right-title span:first-child {
+  color: gray;
+}
+
+.comments {
+  width: 100%;
+  height: 24px;
+
+  .user-name {
+    margin-left: 16px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+}
+
+.time-stamp {
+  margin-left: 16px;
+  color: gray;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+
+.input-comments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid gainsboro;
+}
+
+.input-emoji {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: white;
+  margin-right: 4px;
+}
+
+.commnet-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .comment-input {
+    border: none;
+    width: 90%;
+    height: 30px;
+    outline: none;
+  }
+
+  .comment-submit {
+    border: none;
+    background-color: white;
+    font-size: 16px;
+  }
+}
+
+.post-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-summury {
+  width: inherit;
+  height: 60px;
+}
+
+#user-image {
+  width: 40px;
+  height: 40px;
+}
+
+#rigth-user-cell .porfile-img {
+  width: 50px;
+  height: 50px;
+}
+
+.stories .user-cell {
+  margin: 0px 16px;
+}
+
+.user-cell-container::-webkit-scrollbar {
+  display: none;
+}
+
+.recommend-freinds .user-cell {
+  margin: 0px 16px;
+}
+
+.active-btn {
+  color: rgb(28, 122, 223);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.deactive-btn {
+  color: rgb(184, 216, 251);
+}
