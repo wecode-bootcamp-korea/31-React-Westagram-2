@@ -1,14 +1,10 @@
-const Comment = ({ comment }) => {
-  const handleComment = comment.map((commentItem, i) => {
-    return (
-      <li>
-        <span className="commentId">sunntfterrain_ &nbsp;</span>
-        {commentItem}
-      </li>
-    );
-  });
-
-  return <ul className="footer__comment">{handleComment}</ul>;
+const Comment = ({ item }) => {
+  return (
+    <li>
+      <span className="commentId">Sunnyfterrain_&nbsp;</span>
+      {item}
+    </li>
+  );
 };
 
 export default Comment;

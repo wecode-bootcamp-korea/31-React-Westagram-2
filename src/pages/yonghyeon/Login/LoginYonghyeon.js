@@ -11,6 +11,8 @@ const Login = () => {
     pw: '',
   });
 
+  const isValid = inputValue.id.includes('@') && inputValue.pw.length >= 5;
+
   const handleInput = e => {
     const { value, name } = e.target;
     setInputValue({
@@ -22,14 +24,6 @@ const Login = () => {
   const handleOnClick = () => {
     navigate('/main-yonghyeon');
   };
-
-  const handleOnKeyPress = e => {
-    if (e.key === 'Enter') {
-      handleOnClick();
-    }
-  };
-
-  const isValid = inputValue.id.includes('@') && inputValue.pw.length >= 5;
 
   return (
     <div className="login">
@@ -43,31 +37,27 @@ const Login = () => {
               type="text"
               name="id"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={inputValue.id}
+              autoComplete="off"
               onChange={handleInput}
-              onKeyPress={handleOnKeyPress}
             />
             <input
               className="loginPwInput"
               type="password"
               name="pw"
               placeholder="비밀번호"
-              value={inputValue.pw}
+              autoComplete="off"
               onChange={handleInput}
-              onKeyPress={handleOnKeyPress}
             />
             <input
               className="loginBtn"
-              type="button"
+              type="submit"
               value="로그인"
               disabled={!isValid}
               onClick={handleOnClick}
             />
           </form>
 
-          <a className="loginTag" herf="#">
-            비밀번호를 잊으셨나요?
-          </a>
+          <a className="loginTag">비밀번호를 잊으셨나요?</a>
         </div>
       </section>
     </div>

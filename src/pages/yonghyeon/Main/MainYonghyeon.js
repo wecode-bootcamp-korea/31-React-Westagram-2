@@ -55,7 +55,11 @@ const Main = () => {
               <span>sunny외 1명이 좋아합니다.</span>
             </div>
             <div className="sectionLeft__footer__comment">
-              <Comment comment={comment} />
+              <ul className="footer__comment">
+                {comment.map((item, i) => {
+                  return <Comment key={i} item={item} />;
+                })}
+              </ul>
             </div>
             <div className="sectionLeft__footer_commentInput">
               <form className="commentForm">
