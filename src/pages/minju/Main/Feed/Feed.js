@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Feed.scss';
 
 function Feed() {
+  const [comment, setComment] = useState('');
+  const [comments, setComments] = useState([]);
+
+  const handleChange = event => {
+    setComment(event.target.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    onCreate(comment);
+  };
+
+  const onCreate = comment => {
+    setComments(prevComments => [...prevComments, comment]);
+    setComment('');
+  };
   return (
     <article className="feed">
       <header className="feed__header">
@@ -57,21 +73,32 @@ function Feed() {
       </div>
 
       <div className="feed__comments">
-        <div className="feed__comment__item" data-num="1">
-          <span className="avatar__id">canon_mj</span>
-          <span>거봐~너무 좋았잖아~</span>
-          <span className="feed__comment__reactions">
-            <i className="fa-solid fa-x" data-num="1" />
-            <i className="fa-regular fa-heart" data-like="1" />
-          </span>
-        </div>
+        {comments.map(it, key => {
+          return (
+            <div key={key} className="feed__comment__item">
+              <span className="avatar__id">canon_mj</span>
+              <span>{it}</span>
+              <span className="feed__comment__reactions">
+                <i className="fa-solid fa-x" />
+                <i className="fa-regular fa-heart" />
+              </span>
+            </div>
+          );
+        })}
       </div>
 
       <div className="feed__postTime">42분 전</div>
 
-      <form className="feed__addComment">
-        <input type="text" placeholder="댓글 달기..." />
-        <button type="submit">게시</button>
+      <form className="feed__addComment" onSubmit={handleSubmit}>
+        <input
+          value={comment}
+          onChange={handleChange}
+          type="text"
+          placeholder="댓글 달기..."
+        />
+        <button className={comment.length > 0 ? 'activated' : ''} type="submit">
+          게시
+        </button>
       </form>
     </article>
   );

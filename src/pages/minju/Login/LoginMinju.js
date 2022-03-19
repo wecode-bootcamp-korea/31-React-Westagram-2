@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
 import './LoginMinju.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LoginMinju() {
-  const [newInput, setNewInput] = useState({
-    id: '',
-    password: '',
-  });
   const navigate = useNavigate();
   const goToMain = () => {
     // 아이디에 @ 포함되어있고, 비밀번호가 5 글자 이상이면
     navigate('/main-minju');
   };
 
+  const [newInput, setNewInput] = useState({
+    id: '',
+    password: '',
+  });
+
   const handleInput = event => {
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
     setNewInput(prevValue => ({ ...prevValue, [name]: value }));
   };
+
+  let isValid =
+    newInput.id.includes('@') && newInput.password.length > 4 ? true : false;
 
   return (
     <div className="login">
       <h1 className="logo">Westagram</h1>
-      <form action="./main.html" method="get" className="loginForm">
+      <form className="loginForm">
         <input
           name="id"
           value={newInput.id}
@@ -41,12 +44,13 @@ function LoginMinju() {
           placeholder="비밀번호"
           type="password"
         />
-        <Link to="/main-minju">
-          <button onClick={goToMain} className="loginForm__submit">
-            로그인
-          </button>
-        </Link>
-        {/* <Link to="/main"><button className="loginForm__submit">로그인</button></Link> */}
+        <button
+          onClick={goToMain}
+          className={isValid ? 'valid' : ''}
+          disabled={!isValid}
+        >
+          로그인
+        </button>
       </form>
       <span className="forgotPasswordBtn">비밀번호를 잊으셨나요?</span>
     </div>
