@@ -57,9 +57,9 @@ const Login = () => {
             />
           </form>
 
-          <a className="loginTag" href="#">
+          <div className="loginTag" href="#">
             비밀번호를 잊으셨나요?
-          </a>
+          </div>
         </div>
       </section>
     </div>
