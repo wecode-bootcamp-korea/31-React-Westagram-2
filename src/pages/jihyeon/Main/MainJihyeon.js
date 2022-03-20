@@ -1,24 +1,41 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../styles/common.scss';
 import './MainJihyeon.scss';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
 import Footer from '../Footer/FooterJihyeon';
+import ReplyJihyeon from './ReplyJihyeon/ReplyJihyeon';
 
-function MainJihyeon() {
+const MainJihyeon = () => {
+  // 네비
+
   const navigate = useNavigate();
-
-  // const goToMain = () => {
-  //   navigate('/main-jihyeon');
-  // };
 
   const goToLogin = () => {
     navigate('/Login-jihyeon');
   };
 
+  const goToFullReply = () => {
+    navigate('./ReplyFull.component/ReplyFull.component');
+  };
+
   const goToSignup = () => {
     navigate('/Signup-jihyeon');
+  };
+
+  //댓글
+  const [replyNow, setReplyNow] = useState('');
+  const [replyFull, setReplyFull] = useState([]);
+
+  const replyNowHandler = event => {
+    setReplyNow(event.target.value);
+  };
+
+  const replyFullHandler = event => {
+    event.preventDefault();
+    setReplyFull(prevArr => [...prevArr, replyNow]);
+    setReplyNow('');
   };
 
   return (
@@ -90,47 +107,25 @@ function MainJihyeon() {
         </section>
 
         <section className="articleReplyArea">
-          <div className="minibox1">
-            <img
-              className="miniboxPhoto1"
-              src="images/jihyeon/profilePhoto/profPhoto7.jpg"
-              alt="profile photo"
-            />
-            <span className="miniboxNick1">WecodeFront</span>
-            <span className="miniboxComment1">
-              안녕하세요 저는 프론트앤드 개발자입니다.
-            </span>
-            <button className="deleteBtn1">
-              <img src="images/jihyeon/cross.png" alt="delete button" />
-            </button>
-            <button className="showFullReplyModalBtn">더보기</button>
-          </div>
-          <div className="minibox2">
-            <img
-              className="miniboxPhoto2"
-              src="images/jihyeon/profilePhoto/profPhoto6.jpg"
-              alt="profile photo"
-            />
-            <span className="miniboxNick2">WecodeBack</span>
-            <button className="deleteBtn2">
-              <img src="images/jihyeon/cross.png" alt="delete button" />
-            </button>
-            <span className="miniboxComment2">
-              안녕하세요. 저는 백앤드 개발자입니다.
-            </span>
-          </div>
+          <ReplyJihyeon replyData={replyFull} />
         </section>
 
-        <section className="articleInsertReplyArea">
+        <form className="articleInsertReplyArea" onSubmit={replyFullHandler}>
           <input
             type="text"
             className="articleInsertReplyContent"
             placeholder="댓글 달기.."
+            onChange={replyNowHandler}
+            value={replyNow}
           />
-          <button className="articleInsertReplyBtn">
+          <button
+            type="submit"
+            className="articleInsertReplyBtn"
+            onClick={replyFullHandler}
+          >
             <span>게시</span>
           </button>
-        </section>
+        </form>
       </article>
       <div className="mainRight">
         <section className="sidebarNotLogined">
@@ -237,6 +232,6 @@ function MainJihyeon() {
       <Footer />
     </main>
   );
-}
+};
 
 export default MainJihyeon;

@@ -183,6 +183,8 @@ main .mainLeft .articleReplyArea {
 
   display: flex;
   flex-direction: column;
+
+  overflow: auto;
 }
 
 main .mainLeft .articleReplyArea .minibox1 {
