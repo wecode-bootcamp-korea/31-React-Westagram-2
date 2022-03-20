@@ -1,0 +1,41 @@
+// <footer className="Footer">
+// <button className="showCsBtn">고객 문의</button>
+// <button className="showTermsBtn">약관</button>
+// <span className="companyInfo">2022 Westagram 31th Jihyeon Jeon By React</span>
+// </footer>
+
+footer {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+
+    height: 5vh;
+    width: 100%;
+
+    background-color: white;
+
+    .showCsBtn {
+        margin-left: 5vw;
+        background-color: inherit;
+        border: 0;
+        color: grey;
+    }
+
+    .showTermsBtn {
+        margin-left: 5px;
+        background-color: inherit;
+        border: 0;
+        color: grey;
+    }
+
+    .companyInfo {
+        position: absolute;
+        right: 5vw;
+
+        background-color: inherit;
+        border: 0;
+        color: grey;
+    }
+}
