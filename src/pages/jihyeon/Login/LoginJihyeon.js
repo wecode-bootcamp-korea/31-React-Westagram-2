@@ -23,6 +23,16 @@ function LoginJihyeon() {
       : setCanSubmit(false);
   };
 
+  const submitLoginHandler = event => {
+    event.preventDefault();
+    if (canSubmit) {
+      alert('로그인 시도');
+      setEnteredId('');
+      setEnteredPw('');
+      setCanSubmit(false);
+    }
+  };
+
   const navigate = useNavigate();
 
   const goToMain = () => {
@@ -37,7 +47,7 @@ function LoginJihyeon() {
       <div className="outsideWindow" onClick={goToMain} />
 
       {/* 기능 내용 내부 */}
-      <form className="loginWindow">
+      <form className="loginWindow" onSubmit={submitLoginHandler}>
         <span className="logoForLoginWindow">Westagram</span>
         <input
           className="idInputField"
@@ -45,6 +55,7 @@ function LoginJihyeon() {
           placeholder="아이디"
           onChange={idChangeHandler}
           onKeyUp={checkInput}
+          value={enteredId}
         />
         <input
           className="pwInputField"
@@ -52,12 +63,14 @@ function LoginJihyeon() {
           placeholder="비밀번호(5자 이상)"
           onChange={pwChangeHandler}
           onKeyUp={checkInput}
+          value={enteredPw}
         />
         <input
           type="submit"
           className={
             canSubmit ? 'abledloginSubmitBtn' : 'disabledloginSubmitBtn'
           }
+          onClick={submitLoginHandler}
           value="제출"
         />
         <button className="showNewAccountBtn">회원가입이 필요하신가요?</button>
