@@ -3,7 +3,7 @@ import './Feed.scss';
 
 function Feed() {
   const [comment, setComment] = useState('');
-  const [comments, setComments] = useState([]);
+  const [commentsArr, setCommentsArr] = useState([]);
 
   const handleChange = event => {
     setComment(event.target.value);
@@ -11,13 +11,10 @@ function Feed() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onCreate(comment);
-  };
-
-  const onCreate = comment => {
-    setComments(prevComments => [...prevComments, comment]);
+    setCommentsArr(prevComments => [...prevComments, comment]);
     setComment('');
   };
+
   return (
     <article className="feed">
       <header className="feed__header">
@@ -73,11 +70,11 @@ function Feed() {
       </div>
 
       <div className="feed__comments">
-        {comments.map(it, key => {
+        {commentsArr.map((item, index) => {
           return (
-            <div key={key} className="feed__comment__item">
+            <div key={index} className="feed__comment__item">
               <span className="avatar__id">canon_mj</span>
-              <span>{it}</span>
+              <span>{item}</span>
               <span className="feed__comment__reactions">
                 <i className="fa-solid fa-x" />
                 <i className="fa-regular fa-heart" />
