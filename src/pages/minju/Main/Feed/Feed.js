@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Feed.scss';
+import Comment from './Comment';
 
 function Feed() {
   const [comment, setComment] = useState('');
   const [commentsArr, setCommentsArr] = useState([]);
+  const commentInput = useRef();
 
   const handleChange = event => {
     setComment(event.target.value);
@@ -11,6 +13,10 @@ function Feed() {
 
   const handleSubmit = event => {
     event.preventDefault();
+    if (comment.length < 1) {
+      commentInput.current.focus();
+      return;
+    }
     setCommentsArr(prevComments => [...prevComments, comment]);
     setComment('');
   };
@@ -71,16 +77,7 @@ function Feed() {
 
       <div className="feed__comments">
         {commentsArr.map((item, index) => {
-          return (
-            <div key={index} className="feed__comment__item">
-              <span className="avatar__id">canon_mj</span>
-              <span>{item}</span>
-              <span className="feed__comment__reactions">
-                <i className="fa-solid fa-x" />
-                <i className="fa-regular fa-heart" />
-              </span>
-            </div>
-          );
+          return <Comment key={index} comment={item} />;
         })}
       </div>
 
@@ -88,6 +85,7 @@ function Feed() {
 
       <form className="feed__addComment" onSubmit={handleSubmit}>
         <input
+          ref={commentInput}
           value={comment}
           onChange={handleChange}
           type="text"

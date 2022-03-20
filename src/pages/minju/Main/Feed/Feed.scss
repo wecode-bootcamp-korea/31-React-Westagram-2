@@ -80,7 +80,7 @@ button {
   }
 
   /* feed comments */
-  .feed__comment__item {
+  .comment {
     position: relative;
     padding: 2px 15px;
 
@@ -129,6 +129,10 @@ button {
       top: 6px;
       right: 15px;
       padding: 10px 0px;
+    }
+
+    .activated {
+      opacity: 1;
     }
   }
 }
