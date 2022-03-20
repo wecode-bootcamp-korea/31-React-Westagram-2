@@ -1,35 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginJihyeon.scss';
 import { useNavigate } from 'react-router-dom';
 import MainJihyeon from '../Main/MainJihyeon';
 
 function LoginJihyeon() {
+  //// 이전
+  const [enteredId, setEnteredId] = useState('');
+  const [enteredPw, setEnteredPw] = useState('');
+  const [canSubmit, setCanSubmit] = useState(false);
+
+  const idChangeHandler = event => {
+    setEnteredId(event.target.value);
+  };
+
+  const pwChangeHandler = event => {
+    setEnteredPw(event.target.value);
+  };
+
+  const checkInput = event => {
+    enteredId.includes('@') && enteredPw.length >= 5
+      ? setCanSubmit(true)
+      : setCanSubmit(false);
+  };
+
   const navigate = useNavigate();
 
-  const goToMain = function () {
+  const goToMain = () => {
     navigate('/main-jihyeon');
   };
 
-  const escKeyGoMain = function () {};
+  //// JSX
 
   return (
     <div className="loginJihyeon">
+      {/* 모달창 바깥 */}
       <div className="outsideWindow" onClick={goToMain} />
+
+      {/* 기능 내용 내부 */}
       <form className="loginWindow">
         <span className="logoForLoginWindow">Westagram</span>
-        <input type="text" className="idInputField" placeholder="메일주소" />
         <input
-          type="password"
-          className="pwInputField"
-          placeholder="비밀번호(5자 이상)"
+          className="idInputField"
+          type="text"
+          placeholder="아이디"
+          onChange={idChangeHandler}
+          onKeyUp={checkInput}
         />
-        <input type="submit" className="loginSubmitBtn" value="제출" />
-        <span className="showInputStatus">비밀번호가 짧습니다</span>
+        <input
+          className="pwInputField"
+          type="password"
+          placeholder="비밀번호(5자 이상)"
+          onChange={pwChangeHandler}
+          onKeyUp={checkInput}
+        />
+        <input
+          type="submit"
+          className={
+            canSubmit ? 'abledloginSubmitBtn' : 'disabledloginSubmitBtn'
+          }
+          value="제출"
+        />
         <button className="showNewAccountBtn">회원가입이 필요하신가요?</button>
         <button className="showFindPwBtn">
           아이디나 비밀번호를 잊으셨나요?
         </button>
       </form>
+
+      {/* 모달창 바깥 보이게 */}
       <MainJihyeon />
     </div>
   );
