@@ -1,6 +1,7 @@
 import React from 'react';
 import './LoginJihyeon.scss';
 import { useNavigate } from 'react-router-dom';
+import MainJihyeon from '../Main/MainJihyeon';
 
 function LoginJihyeon() {
   const navigate = useNavigate();
@@ -8,6 +9,8 @@ function LoginJihyeon() {
   const goToMain = function () {
     navigate('/main-jihyeon');
   };
+
+  const escKeyGoMain = function () {};
 
   return (
     <div className="loginJihyeon">
@@ -27,6 +30,7 @@ function LoginJihyeon() {
           아이디나 비밀번호를 잊으셨나요?
         </button>
       </form>
+      <MainJihyeon />
     </div>
   );
 }

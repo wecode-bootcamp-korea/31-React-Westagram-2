@@ -9,9 +9,9 @@ import Footer from '../Footer/FooterJihyeon';
 function MainJihyeon() {
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    navigate('/main-jihyeon');
-  };
+  // const goToMain = () => {
+  //   navigate('/main-jihyeon');
+  // };
 
   const goToLogin = () => {
     navigate('/Login-jihyeon');
