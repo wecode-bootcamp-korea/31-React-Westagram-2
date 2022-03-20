@@ -204,7 +204,7 @@ const MainHyeseong = () => {
               </div>
             </div>
           </section>
-          <section className="recommend-freinds">
+          <section className="recommend-friends">
             <div className="main-right-title">
               <span>회원님을 위한 추천</span>
               <span>모두 보기</span>
