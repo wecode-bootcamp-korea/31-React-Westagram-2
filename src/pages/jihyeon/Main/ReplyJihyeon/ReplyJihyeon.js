@@ -1,16 +1,10 @@
 import './ReplyJihyeon.scss';
-import MainJihyeon from '../MainJihyeon';
-
-// {props.replyData}
-
+import { useState, useEffect } from 'react';
 const ReplyJihyeon = props => {
   return (
     <div className="replyJihyeon">
-      <ul className="replyTextField">
-        {props.replyData.map(input => {
-          return <li>{input}</li>;
-        })}
-      </ul>
+      <li className="replyNickNameArea">{props.name}</li>
+      <li className="replyContentArea">{props.content}</li>
     </div>
   );
 };

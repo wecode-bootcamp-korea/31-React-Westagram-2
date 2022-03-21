@@ -1,17 +1,18 @@
 .replyJihyeon {
   display: flex;
 
-  height: 11vh;
+  height: 3vh;
   width: 68vw;
 
-  .replyTextField {
-    margin-left: 10vw;
+  .replyNickNameArea {
+    margin-top: 1vh;
+    margin-left: 1vw;
+  }
 
-    display: flex;
-    flex-direction: column;
+  .replyContentArea {
+    position: absolute;
+    left: 20vw;
 
-    li {
-      margin-top: 0.5vh;
-    }
+    margin-top: 1vh;
   }
 }

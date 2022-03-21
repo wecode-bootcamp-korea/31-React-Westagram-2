@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
 import Footer from '../Footer/FooterJihyeon';
 import ReplyJihyeon from './ReplyJihyeon/ReplyJihyeon';
+import REPLY_LIST_JIHYEON from './replyListJihyeon';
 
 const MainJihyeon = () => {
   // 네비
@@ -107,7 +108,18 @@ const MainJihyeon = () => {
         </section>
 
         <section className="articleReplyArea">
-          <ReplyJihyeon replyData={replyFull} />
+          {/* <ReplyJihyeon replyData={REPLY_LIST_JIHYEON} /> */}
+          <ul>
+            {REPLY_LIST_JIHYEON.map(input => {
+              return (
+                <ReplyJihyeon
+                  key={input.id}
+                  name={input.userName}
+                  content={input.content}
+                />
+              );
+            })}
+          </ul>
         </section>
 
         <form className="articleInsertReplyArea" onSubmit={replyFullHandler}>
