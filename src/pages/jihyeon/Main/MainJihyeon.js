@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../styles/common.scss';
 import './MainJihyeon.scss';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
 import Footer from '../Footer/FooterJihyeon';
 import ReplyJihyeon from './ReplyJihyeon/ReplyJihyeon';
-import REPLY_LIST_JIHYEON from './replyListJihyeon';
 
 const MainJihyeon = () => {
   // 네비
@@ -17,21 +16,26 @@ const MainJihyeon = () => {
     navigate('/Login-jihyeon');
   };
 
-  const goToFullReply = () => {
-    navigate('./ReplyFull.component/ReplyFull.component');
-  };
-
   const goToSignup = () => {
     navigate('/Signup-jihyeon');
   };
 
   //댓글
   const [replyNow, setReplyNow] = useState('');
-  const [replyFull, setReplyFull] = useState([]);
 
   const replyNowHandler = event => {
     setReplyNow(event.target.value);
   };
+
+  const [replyFull, setReplyFull] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => {
+        setReplyFull(data);
+      });
+  }, []);
 
   const replyFullHandler = event => {
     event.preventDefault();
@@ -108,9 +112,8 @@ const MainJihyeon = () => {
         </section>
 
         <section className="articleReplyArea">
-          {/* <ReplyJihyeon replyData={REPLY_LIST_JIHYEON} /> */}
           <ul>
-            {REPLY_LIST_JIHYEON.map(input => {
+            {replyFull.map(input => {
               return (
                 <ReplyJihyeon
                   key={input.id}
@@ -119,10 +122,11 @@ const MainJihyeon = () => {
                 />
               );
             })}
+            <ReplyJihyeon />
           </ul>
         </section>
 
-        <form className="articleInsertReplyArea" onSubmit={replyFullHandler}>
+        <form className="articleInsertReplyArea">
           <input
             type="text"
             className="articleInsertReplyContent"
@@ -130,11 +134,7 @@ const MainJihyeon = () => {
             onChange={replyNowHandler}
             value={replyNow}
           />
-          <button
-            type="submit"
-            className="articleInsertReplyBtn"
-            onClick={replyFullHandler}
-          >
+          <button type="submit" className="articleInsertReplyBtn">
             <span>게시</span>
           </button>
         </form>

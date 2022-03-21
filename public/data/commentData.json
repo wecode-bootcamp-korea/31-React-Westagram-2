@@ -1,0 +1,45 @@
+[
+  {
+    "articleWriterId": 1,
+    "articleWriterNickname": "존",
+    "articlContent": "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 ",
+    "replyWriterId": [7, 8, 9],
+    "replyWriterNickname": ["영구", "재석", "명수"],
+    "replyContent": [
+      "존 게시물에 있는 영구의 댓글 1ㄴㅇㅁㄴ",
+      "존 게시물에 있는 재석의 댓글 123ㅋㅌㅊ",
+      "존 게시물에 있는 명수의 댓글 ㄴㅇㄹㅁㄴ"
+    ]
+  },
+  {
+    "articleWriterId": 2,
+    "articleWriterNickname": "폴",
+    "articlContent": "남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세 ",
+    "replyWriterId": [8, 9, 10],
+    "replyWriterNickname": ["재석", "명수", "홍철"],
+    "replyContent": [
+      "폴 게시물에 있는 재석의 댓글 12312",
+      "폴 게시물에 있는 명수의 댓글 123213",
+      "폴 게시물에 있는 홍철의 댓글 234124",
+  },
+  {
+    "articleWriterId": 3,
+    "articleWriterNickname": "조지",
+    "articlContent": "가을하늘 공활한데 높고 구름없이 밝은달은 우리가슴 일편단심일세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세 ",
+    "replyWriterId": [7, 9],
+    "replyWriterNickname": ["영구", "명수"],
+    "replyContent": [
+      "조지 게시물에 있는 영구의 댓글adsfds",
+      "조지 게시물에 있는 명수의 댓글qweqwe",
+  },
+  {
+    "articleWriterId": 4,
+    "articleWriterNickname": "링고",
+    "articlContent": "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 ",
+    "replyWriterId": [10],
+    "replyWriterNickname": ["홍철"],
+    "replyContent": [
+      "링고 게시물에 있는 홍철의 댓글"
+    ],
+  }
+]
