@@ -89,7 +89,13 @@ const Feed = ({
 
       <div className="feed__comments">
         {commentsArr.map(item => {
-          return <Comment key={item.id} {...item} />;
+          return (
+            <Comment
+              key={item.id}
+              content={item.content}
+              userName={item.userName}
+            />
+          );
         })}
       </div>
 
