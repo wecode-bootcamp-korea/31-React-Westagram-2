@@ -18,19 +18,15 @@ const Feed = ({
   let [isdisabled, setIsDisabled] = useState(true);
   let submitBtnClassName = `${isActice}-btn`;
   let [comments, setComments] = useState([...commentList]);
-
-  useEffect(() => {
-    checkInput();
-  }, [commentInputValue]);
-
+  let commentsArr = [...commentList];
   const handleCommnetInput = e => {
-    let comment = e.target.value; //copy
-    commentInputValue = comment;
+    const { value } = e.target;
+    commentInputValue = value;
     setCommentInputValue(commentInputValue);
   };
 
   const addComment = e => {
-    let commentArr = [...comments]; //copy
+    const commentArr = [...comments]; //copy
     commentArr.push({
       id: commentArr.length + 1,
       userName: 'moooo_nhs',
@@ -58,8 +54,12 @@ const Feed = ({
     emptyCheck === '' ? deActivateBtn() : activateBtn();
   };
 
+  useEffect(() => {
+    checkInput();
+  });
+
   return (
-    <div className="post">
+    <div className="feed">
       <div className="user-cell">
         <img alt="profile-img" src={userProfileImg} className="porfile-img" />
         <div className="user-cell-text">
@@ -68,11 +68,11 @@ const Feed = ({
         </div>
         <i className="fa-solid fa-ellipsis" />
       </div>
-      <div className="article-iamge">
-        <img alt="thumbnail" className="iamge-thumbnail" src={thumbnail} />
+      <div className="articleImage">
+        <img alt="thumbnail" className="iamgeThumbnail" src={thumbnail} />
       </div>
-      <div className="article-icons">
-        <div className="icons-left">
+      <div className="articleIcons">
+        <div className="iconsLeft">
           <i id="articleHeart" className="fa-regular fa-heart fa-xl" />
           <i className="fa-regular fa-comment fa-xl" />
           <i className="fa-solid fa-arrow-up-from-bracket fa-xl" />
@@ -80,20 +80,20 @@ const Feed = ({
         <i className="fa-regular fa-bookmark fa-xl" />
       </div>
 
-      <div id="articleConnents" className="article-comments">
-        <div className="likes-count">
+      <div className="articleComments">
+        <div className="likesCount">
           <img alt="likes-count-profile" src="images/hyeseong/핑구.jpeg" />
           <span>aineworld</span>
           님&nbsp;
           <span>외 10명</span>이 좋아합니다
         </div>
-        <div className="poster-commnets">
+        <div className="posterCommnets">
           <div className="comments">
             <span className="user-name">{userName}</span>
             <span className="commnets-desc">{content}</span>
           </div>
         </div>
-        <ul className="user-comments">
+        <ul className="userCommnets">
           {comments.map(comment => {
             return (
               <UserComment
@@ -105,19 +105,19 @@ const Feed = ({
           })}
         </ul>
       </div>
-      <span className="time-stamp">1시간 전</span>
-      <div className="input-comments">
-        <button className="input-emoji">
+      <span className="timeStamp">1시간 전</span>
+      <div className="inputComments">
+        <button className="inputEmoji">
           <i className="fa-regular fa-face-smile fa-xl" />
         </button>
         <form
-          className="commnet-form"
+          className="commnetForm"
           onSubmit={e => {
             addComment(e);
           }}
         >
           <input
-            className="comment-input"
+            className="commentInput"
             id="commnetInput"
             type="text"
             placeholder="댓글 달기..."

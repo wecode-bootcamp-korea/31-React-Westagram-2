@@ -14,12 +14,14 @@ const LoginHyeseong = () => {
   };
 
   const handleIdInput = e => {
-    idInputValue = e.target.value;
+    const { value } = e.target;
+    idInputValue = value;
     setIdInputValue(idInputValue);
   };
 
   const handlePwdInput = e => {
-    pwdInputValue = e.target.value;
+    const { value } = e.target;
+    pwdInputValue = value;
     setPwdInputValue(pwdInputValue);
   };
 

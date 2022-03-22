@@ -17,14 +17,14 @@ const MainHyeseong = () => {
   return (
     <div className="MainHyeseong">
       <Nav />
-      <article className="main-contents">
+      <article className="mainContents">
         <article className="feeds">
           <article className="postContainer">
             {feeds.map(feed => {
               return <Feed key={feed.id} feed={feed} />;
             })}
           </article>
-          <article className="main-right">
+          <article className="mainRight">
             <div className="user-cell" id="rigth-user-cell">
               <img
                 alt="user-profile-img"

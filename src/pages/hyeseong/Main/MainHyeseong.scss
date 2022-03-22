@@ -3,7 +3,7 @@
 body {
   background-color: whitesmoke;
 
-  .main-contents {
+  .mainContents {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,127 +23,227 @@ body {
         width: 614px;
         height: auto;
 
-        .post {
+        .feed {
           background-color: white;
           margin-bottom: 32px;
           border: 1px solid gainsboro;
+
+          .user-cell {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 56px;
+            margin: 8px 16px;
+
+            .porfile-img {
+              width: 40px;
+              height: 40px;
+              border-radius: 20px;
+            }
+            .user-cell-text {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              margin-left: 16px;
+
+              .user-id {
+                font-size: large;
+                font-weight: 600;
+              }
+              .user-cell-desc {
+                font-size: small;
+                text-align: left;
+                color: gray;
+              }
+            }
+            .fa-ellipsis {
+              position: absolute;
+              right: 0px;
+            }
+          }
         }
       }
-      .main-right {
+      .mainRight {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: whitesmoke;
         width: 280px;
         height: 600px;
+        .user-cell {
+          position: relative;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          height: 56px;
+          margin: 0 16px;
+
+          .porfile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+          }
+          .user-cell-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-left: 16px;
+
+            .user-id {
+              font-size: large;
+              font-weight: 600;
+            }
+            .user-cell-desc {
+              font-size: small;
+              text-align: left;
+              color: gray;
+            }
+          }
+        }
+        .stories {
+          width: inherit;
+          height: 240px;
+          border: 1px solid gainsboro;
+          background-color: white;
+
+          .main-right-title {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 16px;
+            width: 100%;
+            height: auto;
+
+            span:first-child {
+              color: gray;
+            }
+          }
+          .user-cell-container-stories {
+            height: 200px;
+            overflow-x: scroll;
+
+            .user-cell {
+              position: relative;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              height: 56px;
+              margin: 0 16px;
+
+              .porfile-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+              }
+              .user-cell-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin-left: 16px;
+
+                .user-id {
+                  font-size: large;
+                  font-weight: 600;
+                }
+                .user-cell-desc {
+                  font-size: small;
+                  text-align: left;
+                  color: gray;
+                }
+              }
+            }
+          }
+        }
+
+        .recommend-friends {
+          width: inherit;
+          height: 200px;
+          border: 1px solid gainsboro;
+          background-color: white;
+
+          .main-right-title {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 16px;
+            width: 100%;
+            height: auto;
+
+            span:first-child {
+              color: gray;
+            }
+          }
+          .user-cell-container-recommend {
+            height: 160px;
+            overflow-y: scroll;
+
+            .user-cell {
+              position: relative;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              height: 56px;
+              margin: 0 16px;
+
+              .porfile-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+              }
+              .user-cell-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin-left: 16px;
+
+                .user-id {
+                  font-size: large;
+                  font-weight: 600;
+                }
+                .user-cell-desc {
+                  font-size: small;
+                  text-align: left;
+                  color: gray;
+                }
+              }
+            }
+          }
+        }
+
+        .copy {
+          margin-top: 16px;
+          font-size: 8px;
+          color: gray;
+        }
       }
     }
   }
 }
 
-.icons-left .fa-comment {
-  transform: scaleX(-1);
-}
-main {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.main-right-title {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 16px;
-  width: 100%;
-  height: auto;
-}
-.stories {
-  width: inherit;
-  height: 240px;
-  border: 1px solid gainsboro;
-  background-color: white;
-
-  .user-cell-container-stories {
-    height: 200px;
-    overflow-x: scroll;
-  }
-}
-
-.recommend-friends {
-  width: inherit;
-  height: 200px;
-  border: 1px solid gainsboro;
-  background-color: white;
-
-  .user-cell-container-recommend {
-    height: 160px;
-    overflow-y: scroll;
-  }
-}
-
-.copy {
-  margin-top: 16px;
-  font-size: 8px;
-  color: gray;
-}
-
-.article-iamge {
+.articleImage {
   width: inherit;
   height: 600px;
   padding-right: 0;
-}
 
-.iamge-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.user-cell {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 56px;
-  margin: 8px 16px;
-
-  .porfile-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-  }
-  .user-cell-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 16px;
-
-    .user-id {
-      font-size: large;
-      font-weight: 600;
-    }
-    .user-cell-desc {
-      font-size: small;
-      text-align: left;
-      color: gray;
-    }
-  }
-  .fa-ellipsis {
-    position: absolute;
-    right: 0px;
+  .iamgeThumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
-.article-icons {
+.articleIcons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 50px;
-  .icons-left {
+  .iconsLeft {
     margin: 0 8px;
     i {
       margin: 0px 8px;
+    }
+    .fa-comment {
+      transform: scaleX(-1);
     }
   }
 
@@ -152,14 +252,14 @@ main {
   }
 }
 
-.article-comments {
+.articleComments {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: inherit;
   height: auto;
 
-  .likes-count {
+  .likesCount {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -175,31 +275,42 @@ main {
       margin-left: 16px;
     }
   }
-}
 
-.main-right-title span:first-child {
-  color: gray;
-}
+  .posterCommnets {
+    .comments {
+      width: 100%;
+      height: 24px;
 
-.comments {
-  width: 100%;
-  height: 24px;
+      .user-name {
+        margin-left: 16px;
+        margin-right: 8px;
+        font-weight: 600;
+      }
+    }
+  }
 
-  .user-name {
-    margin-left: 16px;
-    margin-right: 8px;
-    font-weight: 600;
+  .userCommnets {
+    .comments {
+      width: 100%;
+      height: 24px;
+
+      .user-name {
+        margin-left: 16px;
+        margin-right: 8px;
+        font-weight: 600;
+      }
+    }
   }
 }
 
-.time-stamp {
+.timeStamp {
   margin-left: 16px;
   color: gray;
   font-size: 10px;
   margin-bottom: 8px;
 }
 
-.input-comments {
+.inputComments {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -207,33 +318,32 @@ main {
   width: 100%;
   height: 50px;
   border-top: 1px solid gainsboro;
-}
 
-.input-emoji {
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  border: none;
-  background-color: white;
-  margin-right: 4px;
-}
-
-.commnet-form {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-
-  .comment-input {
-    border: none;
-    width: 90%;
+  .inputEmoji {
+    padding: 0;
+    width: 30px;
     height: 30px;
-    outline: none;
-  }
-
-  .commentSubmit {
     border: none;
     background-color: white;
-    font-size: 16px;
+    margin-right: 4px;
+  }
+  .commnetForm {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .commentInput {
+      border: none;
+      width: 90%;
+      height: 30px;
+      outline: none;
+    }
+
+    .commentSubmit {
+      border: none;
+      background-color: white;
+      font-size: 16px;
+    }
   }
 }
 
@@ -244,31 +354,8 @@ main {
   align-items: center;
 }
 
-.user-summury {
-  width: inherit;
-  height: 60px;
-}
-
-#user-image {
-  width: 40px;
-  height: 40px;
-}
-
-#rigth-user-cell .porfile-img {
-  width: 50px;
-  height: 50px;
-}
-
-.stories .user-cell {
-  margin: 0px 16px;
-}
-
 .user-cell-container::-webkit-scrollbar {
   display: none;
-}
-
-.recommend-friends .user-cell {
-  margin: 0px 16px;
 }
 
 .active-btn {
