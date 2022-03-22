@@ -39,7 +39,7 @@ const LoginHyeseong = () => {
   };
 
   return (
-    <div className="container">
+    <div className="LoginHyeseong">
       <div className="loginContainer">
         <span className="logo" id="logo-login">
           Westagram

@@ -5,16 +5,38 @@ body {
 
   .main-contents {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 100px 0;
-    width: 935px;
-    margin: auto;
 
     .feeds {
-      width: 614px;
-      height: auto;
-      border: 1px solid gainsboro;
-      background-color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: whitesmoke;
+      margin: auto;
+      width: 935px;
+      .postContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+        width: 614px;
+        height: auto;
+
+        .post {
+          background-color: white;
+          margin-bottom: 32px;
+          border: 1px solid gainsboro;
+        }
+      }
+      .main-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: whitesmoke;
+        width: 280px;
+        height: 600px;
+      }
     }
   }
 }
@@ -28,13 +50,6 @@ main {
   width: 100%;
 }
 
-.main-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 280px;
-  height: 600px;
-}
 .main-right-title {
   display: flex;
   justify-content: space-between;
@@ -215,7 +230,7 @@ main {
     outline: none;
   }
 
-  .comment-submit {
+  .commentSubmit {
     border: none;
     background-color: white;
     font-size: 16px;
