@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Comment from './Comment';
 
-const Feed = ({ content, name, photo, comment }) => {
-  const [newComment, setNewComment] = useState(comment);
+const Feed = ({ content, userName, photo, comments }) => {
+  const [newComment, setNewComment] = useState(comments);
   const [input, setInput] = useState('');
   console.log(content);
+
   const test = e => {
     e.preventDefault();
 
@@ -19,15 +20,15 @@ const Feed = ({ content, name, photo, comment }) => {
     }
 
     // 댓글 기능
-    const copyComment = [...comment];
-    copyComment.push({
-      id: (comment.length += 1),
-      userName: 'yonghyeon',
-      content: input,
-      isLiked: false,
-    });
-    setNewComment(copyComment);
-    setInput('');
+    // const copyComment = [...comment];
+    // copyComment.push({
+    //   id: (comment.length += 1),
+    //   userName: 'yonghyeon',
+    //   content: input,
+    //   isLiked: false,
+    // });
+    // setNewComment(copyComment);
+    // setInput('');
   };
 
   return (
@@ -35,7 +36,7 @@ const Feed = ({ content, name, photo, comment }) => {
       <div className="sectionLeft__header">
         <div className="user">
           <div className="user__img" />
-          <span className="user__id">{name}</span>
+          <span className="user__id">{userName}</span>
         </div>
         <div className="more">
           <i className="fa-solid fa-ellipsis" />

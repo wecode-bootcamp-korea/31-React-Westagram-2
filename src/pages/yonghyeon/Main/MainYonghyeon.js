@@ -1,82 +1,32 @@
-import React, { useState } from 'react';
-import Comment from './components/Comment';
-import './MainYonghyeon.scss';
+import React, { useEffect, useState } from 'react';
+import Feed from './components/Feed';
 import Nav from '../../../components/Nav/Nav';
+import './MainYonghyeon.scss';
 
 const Main = () => {
+  const [feed, setFeed] = useState([]);
   const [comment, setComment] = useState([]);
   let [input, setInput] = useState('');
 
-  const handleComment = e => {
-    e.preventDefault();
-    const blank = /^\s+|\s+$/g;
-    const newComment = [...comment];
-    if (input === '') {
-      return;
-    }
-    if (input.replace(blank, '') === '') {
-      return;
-    }
-    newComment.push(input);
-    setComment(newComment);
-    setInput('');
+  const getData = async () => {
+    const data = await fetch('./data/feedData.json').then(res => res.json());
+    setFeed(data);
   };
+
+  useEffect(() => {
+    getData();
+    console.log(feed);
+  }, []);
 
   return (
     <main>
       <Nav />
       <section className="section">
-        <section className="sectionLeft">
-          <div className="sectionLeft__header">
-            <div className="user">
-              <div className="user__img" />
-              <span className="user__id">loubxxtin</span>
-            </div>
-            <div className="more">
-              <i className="fa-solid fa-ellipsis" />
-            </div>
-          </div>
-          <div className="sectionLeft__main" />
-          <div className="sectionLeft__footer">
-            <div className="sectionLeft__footer__icons">
-              <div className="icons">
-                <div className="heart" />
-                <div className="comment">
-                  <i className="fa-regular fa-comment" />
-                </div>
-                <div className="sharing">
-                  <i className="fa-regular fa-paper-plane" />
-                </div>
-              </div>
-              <div className="bookmark" />
-            </div>
-            <div className="sectionLeft__footer__like">
-              <div className="like__img" />
-              <span>sunny외 1명이 좋아합니다.</span>
-            </div>
-            <div className="sectionLeft__footer__comment">
-              <ul className="footer__comment">
-                {comment.map((item, i) => {
-                  return <Comment key={i} item={item} />;
-                })}
-              </ul>
-            </div>
-            <div className="sectionLeft__footer_commentInput">
-              <form className="commentForm">
-                <input
-                  className="commentInput"
-                  type="text"
-                  placeholder="댓글 달기..."
-                  value={input}
-                  onChange={e => {
-                    setInput(e.target.value);
-                  }}
-                />
-                <button onClick={handleComment}>게시</button>
-              </form>
-            </div>
-          </div>
-        </section>
+        <div className="sectionFeed">
+          {feed.map(item => {
+            return <Feed key={item.id} {...item} />;
+          })}
+        </div>
 
         <aside className="asideContainer">
           <div className="sectionRight__myData">

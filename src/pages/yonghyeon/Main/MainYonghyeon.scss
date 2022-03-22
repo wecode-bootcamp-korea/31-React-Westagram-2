@@ -103,10 +103,12 @@
   display: flex;
   text-align: center;
   justify-content: center;
-
+  padding-top: 100px;
   background-color: #fafafa;
 
   .sectionLeft {
+    margin-bottom: 50px;
+
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #dbdbdb;
@@ -440,4 +442,9 @@
   .navSearchBar {
     opacity: 0;
   }
+}
+
+.feedMain {
+  padding: 0 20px;
+  text-align: left;
 }
