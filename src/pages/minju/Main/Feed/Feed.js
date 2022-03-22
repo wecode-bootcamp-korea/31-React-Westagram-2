@@ -2,13 +2,25 @@ import React, { useRef, useState } from 'react';
 import './Feed.scss';
 import Comment from './Comment';
 
-function Feed() {
-  const [comment, setComment] = useState('');
-  const [commentsArr, setCommentsArr] = useState([]);
+function Feed({
+  profileName,
+  profileUrl,
+  contentUrl,
+  feedContent,
+  commentList,
+}) {
+  const [comment, setComment] = useState({
+    id: '',
+    userName: 'minjuKim',
+    content: '',
+    isLiked: true,
+  });
+
+  const [commentsArr, setCommentsArr] = useState([...commentList]);
   const commentInput = useRef();
 
   const handleChange = event => {
-    setComment(event.target.value);
+    setComment(prevValue => ({ ...prevValue, content: event.target.value }));
   };
 
   const handleSubmit = event => {
@@ -17,8 +29,10 @@ function Feed() {
       commentInput.current.focus();
       return;
     }
-    setCommentsArr(prevComments => [...prevComments, comment]);
-    setComment('');
+    let dataId = commentsArr.length + 1;
+    const newComment = { ...comment, id: dataId++ };
+    setCommentsArr(prevComments => [...prevComments, newComment]);
+    setComment(prevValue => ({ ...prevValue, content: '' }));
   };
 
   return (
@@ -26,13 +40,9 @@ function Feed() {
       <header className="feed__header">
         <div className="feed__header__left">
           <div className="img__container">
-            <img
-              className="avatar__img"
-              alt="my profile"
-              src="/images/minju/myprofile.jpeg"
-            />
+            <img className="avatar__img" alt="my profile" src={profileUrl} />
           </div>
-          <div className="avatar__id">thisisme</div>
+          <div className="avatar__id">{profileName}</div>
         </div>
         <div className="feed__header__right">
           <i className="fa fa-light fa-ellipsis" />
@@ -40,7 +50,7 @@ function Feed() {
       </header>
 
       <div className="feed__image__container">
-        <img alt="feed content" src="/images/minju/baking.jpeg" />
+        <img alt="feed content" src={contentUrl} />
       </div>
 
       <div className="feed__reaction">
@@ -70,14 +80,20 @@ function Feed() {
       </div>
 
       <div className="feed__post">
-        <span className="avatar__id">thisisme</span>
-        <span>위워크에서 진행한 베이킹 클래스...</span>
+        <span className="avatar__id">{profileName}</span>
+        <span>{feedContent}</span>
         <button>더 보기</button>
       </div>
 
       <div className="feed__comments">
-        {commentsArr.map((item, index) => {
-          return <Comment key={index} comment={item} />;
+        {commentsArr.map(item => {
+          return (
+            <Comment
+              key={item.id}
+              comment={item.content}
+              username={item.userName}
+            />
+          );
         })}
       </div>
 
@@ -86,12 +102,15 @@ function Feed() {
       <form className="feed__addComment" onSubmit={handleSubmit}>
         <input
           ref={commentInput}
-          value={comment}
+          value={comment.content}
           onChange={handleChange}
           type="text"
           placeholder="댓글 달기..."
         />
-        <button className={comment.length > 0 ? 'activated' : ''} type="submit">
+        <button
+          className={comment.content.length > 0 ? 'activated' : ''}
+          type="submit"
+        >
           게시
         </button>
       </form>

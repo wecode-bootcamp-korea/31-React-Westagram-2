@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './LoginMinju.scss';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,14 +13,21 @@ function LoginMinju() {
     id: '',
     password: '',
   });
+  const [isValid, setIsValid] = useState(false);
 
   const handleInput = event => {
     const { name, value } = event.target;
     setNewInput(prevValue => ({ ...prevValue, [name]: value }));
   };
 
-  let isValid =
-    newInput.id.includes('@') && newInput.password.length > 4 ? true : false;
+  useEffect(() => {
+    setIsValid(
+      newInput.id.includes('@') && newInput.password.length > 4 ? true : false
+    );
+  }, [newInput]);
+
+  // let isValid =
+  //   newInput.id.includes('@') && newInput.password.length > 4 ? true : false;
 
   return (
     <div className="login">
