@@ -18,7 +18,7 @@ const Feed = ({
   let [isdisabled, setIsDisabled] = useState(true);
   let submitBtnClassName = `${isActice}-btn`;
   let [comments, setComments] = useState([...commentList]);
-  let commentsArr = [...commentList];
+
   const handleCommnetInput = e => {
     const { value } = e.target;
     commentInputValue = value;
