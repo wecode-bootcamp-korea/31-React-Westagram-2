@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode",
+    "content": "어서오세요 31기 여러분",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userName": "kyuhyun",
+    "content": "응애~",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "userName": "youngwan",
+    "content": "으악!!!!!",
+    "isLiked": false
+  },
+  {
+    "id": 4,
+    "userName": "hyesung",
+    "content": "ㅋㅋㅋㅋㅋ",
+    "isLiked": false
+  },
+  {
+    "id": 5,
+    "userName": "jihyeon",
+    "content": "진짜 아니에요ㅠㅠ",
+    "isLiked": false
+  }
+]

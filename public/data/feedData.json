@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "userName": "cake",
+    "photo": "/images/yonghyeon/cake.png",
+    "content": "맛있는 케이크",
+    "isLiked": true,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "어서오세요 31기 여러분",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "kyuhyun",
+        "content": "응애~",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "youngwan",
+        "content": "으악!!!!!",
+        "isLiked": false
+      },
+      {
+        "id": 4,
+        "userName": "hyesung",
+        "content": "ㅋㅋㅋㅋㅋ",
+        "isLiked": false
+      },
+      {
+        "id": 5,
+        "userName": "jihyeon",
+        "content": "진짜 아니에요ㅠㅠ",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "kyuhyun",
+    "photo": "/images/yonghyeon/user.png",
+    "content": "응애~",
+    "isLiked": false,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "모두 다 할 수 있어요",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "aaa",
+        "content": "힘들다",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "bbb",
+        "content": "내가 잘 하고 있는 것일까?",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "flower",
+    "photo": "/images/yonghyeon/flower.png",
+    "content": "난 꽃",
+    "isLiked": false,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "어서오세요 31기 여러분",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "kyuhyun",
+        "content": "응애~",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "userName": "camera",
+    "photo": "/images/yonghyeon/circle.png",
+    "content": "360카메라",
+    "isLiked": false,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "unknown",
+        "content": "다들 잘하는데..",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "devil",
+        "content": "왜 나만 못해?",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "nope",
+        "content": "잘 모르겠어..",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userName": "cat",
+    "photo": "/images/yonghyeon/cat.jpg",
+    "content": "난 고양이",
+    "isLiked": false,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "je",
+        "content": "난 왜 못하는 걸까..",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "mmmm",
+        "content": "잘하고 싶은데..",
+        "isLiked": false
+      }
+    ]
+  }
+]
