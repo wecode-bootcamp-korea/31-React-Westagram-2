@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="navbar">
-        <div className="navbar__logo">
+        <div className="navbar_logo">
           <i className="fa-brands fa-instagram" />
           <div className="navbar__logo__text">Westagram</div>
         </div>
