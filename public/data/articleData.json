@@ -1,0 +1,35 @@
+[
+  {
+    "articleWriterId": 1,
+    "articleWriterNickname": "존",
+    "articleContent": "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 ",
+    "replyWriterNickName": ["유재석", "박명수", "노홍철"],
+    "replyContent": [
+      "안녕하세요 유재석입니다",
+      "안녕하세요 박명수입니다",
+      "안녕하세요 노홍철입니다"
+    ]
+  },
+  {
+    "articleWriterId": 2,
+    "articleWriterNickname": "폴",
+    "articleContent": "남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세 ",
+    "replyWriterNickName": ["오일남", "위코드"],
+    "replyContent": ["위스타 그램 그만해~ 이러다가 다 죽어~", "위코드입니다"]
+  },
+  {
+    "articleWriterId": 3,
+    "articleWriterNickname": "조지",
+    "articleContent": "가을하늘 공활한데 높고 구름없이 밝은달은 우리가슴 일편단심일세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세 ",
+    "replyWriterNickName": ["abc", "ddd"],
+    "replyContent": ["안녕하세요 abc입니다", "안녕하세요 ddd입니다"]
+  },
+
+  {
+    "articleWriterId": 4,
+    "articleWriterNickname": "링고",
+    "articleContent": "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 (후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 ",
+    "replyWriterNickName": ["qww"],
+    "replyContent": ["안녕하세요 qww입니다"]
+  }
+]
