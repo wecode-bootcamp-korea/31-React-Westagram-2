@@ -19,8 +19,7 @@ function LoginMinju() {
     setNewInput(prevValue => ({ ...prevValue, [name]: value }));
   };
 
-  let isValid =
-    newInput.id.includes('@') && newInput.password.length > 4 ? true : false;
+  let isValid = newInput.id.includes('@') && newInput.password.length > 4;
 
   return (
     <div className="login">
