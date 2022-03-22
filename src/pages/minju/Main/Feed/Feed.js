@@ -75,8 +75,9 @@ const Feed = ({
             />
           </div>
           <div>
-            <span className="avatar__id">aineworld</span>님 <b>외 10명</b>이
-            좋아합니다.
+            <span className="avatar__id">
+              aineworld님 <strong>외 10명</strong>이 좋아합니다.
+            </span>
           </div>
         </div>
       </div>
