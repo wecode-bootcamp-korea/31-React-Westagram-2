@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 const LoginHyeseong = () => {
   let [idInputValue, setIdInputValue] = useState('');
   let [pwdInputValue, setPwdInputValue] = useState('');
-  let [isActice, setIsActice] = useState('deactive');
-  let [isdisabled, setIsDisabled] = useState(true);
+  let [isActice, setIsActice] = useState(false);
+
   const navigate = useNavigate();
 
   const goToMain = () => {
@@ -24,20 +24,9 @@ const LoginHyeseong = () => {
     pwdInputValue = value;
     setPwdInputValue(pwdInputValue);
   };
-
-  const activateBtn = () => {
-    setIsActice('active');
-    setIsDisabled(false);
-  };
-  const deActivateBtn = () => {
-    setIsActice('deactive');
-    setIsDisabled(true);
-  };
-
   const checkInput = () => {
-    idInputValue.indexOf('@') === -1 || pwdInputValue.length < 5
-      ? deActivateBtn()
-      : activateBtn();
+    const check = idInputValue.indexOf('@') === -1 || pwdInputValue.length < 5;
+    setIsActice(!check);
   };
 
   return (
@@ -66,14 +55,14 @@ const LoginHyeseong = () => {
             checkInput();
           }}
         />
-        <div to="/Main" className="goto-main" href="main.html">
+        <div className="goto-main">
           <button
-            className={`${isActice}-login-btn`}
+            className={isActice ? 'active-login-btn' : 'deactive-login-btn'}
             id="login-btn"
             onClick={() => {
               goToMain();
             }}
-            disabled={isdisabled}
+            disabled={!isActice}
           >
             로그인
           </button>

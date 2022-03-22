@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './MainHyeseong.scss';
-
-import Feed from './Feed';
 import Nav from '../../../components/Nav/Nav';
-
+import Feed from './Feed';
+import './MainHyeseong.scss';
+import storyData from './storyData';
 const MainHyeseong = () => {
   useEffect(() => {
     fetch('http://localhost:3000/data/feedData.json')
@@ -12,6 +11,7 @@ const MainHyeseong = () => {
         setFeeds(data);
       });
   }, []);
+
   let [feeds, setFeeds] = useState([]);
 
   return (
@@ -42,50 +42,21 @@ const MainHyeseong = () => {
                 <span>모두 보기</span>
               </div>
               <div className="user-cell-container user-cell-container-stories">
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/핑구.jpeg"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
+                {storyData.map(story => {
+                  return (
+                    <div className="user-cell" key={story.id}>
+                      <img
+                        alt="user-profile-img"
+                        src={story.profileImage}
+                        className="porfile-img"
+                      />
+                      <ul className="user-cell-text">
+                        <li className="user-id">{story.userId}</li>
+                        <li className="user-cell-desc">{story.userDesc}</li>
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             </section>
             <section className="recommend-friends">
@@ -94,50 +65,21 @@ const MainHyeseong = () => {
                 <span>모두 보기</span>
               </div>
               <div className=" user-cell-container user-cell-container-recommend">
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
-                <div className="user-cell">
-                  <img
-                    alt="user-profile-img"
-                    src="images/hyeseong/otter.png"
-                    className="porfile-img"
-                  />
-                  <ul className="user-cell-text">
-                    <li className="user-id">moooo_nhs</li>
-                    <li className="user-cell-desc">wecode</li>
-                  </ul>
-                </div>
+                {storyData.map(story => {
+                  return (
+                    <div className="user-cell" key={story.id}>
+                      <img
+                        alt="user-profile-img"
+                        src={story.profileImage}
+                        className="porfile-img"
+                      />
+                      <ul className="user-cell-text">
+                        <li className="user-id">{story.userId}</li>
+                        <li className="user-cell-desc">{story.userDesc}</li>
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             </section>
             <footer className="copy">

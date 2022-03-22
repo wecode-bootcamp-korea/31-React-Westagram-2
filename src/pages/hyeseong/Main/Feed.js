@@ -14,9 +14,7 @@ const Feed = ({
   },
 }) => {
   let [commentInputValue, setCommentInputValue] = useState('');
-  let [isActice, setIsActice] = useState('deactive');
-  let [isdisabled, setIsDisabled] = useState(true);
-  let submitBtnClassName = `${isActice}-btn`;
+  let [isActice, setIsActice] = useState(false);
   let [comments, setComments] = useState([...commentList]);
 
   const handleCommnetInput = e => {
@@ -39,19 +37,10 @@ const Feed = ({
     e.preventDefault();
   };
 
-  const activateBtn = () => {
-    setIsActice('active');
-    setIsDisabled(false);
-  };
-
-  const deActivateBtn = () => {
-    setIsActice('deactive');
-    setIsDisabled(true);
-  };
-
   const checkInput = () => {
-    let emptyCheck = commentInputValue.replace(/(\s*)/g, '');
-    emptyCheck === '' ? deActivateBtn() : activateBtn();
+    let removeSpace = commentInputValue.replace(/(\s*)/g, '');
+    let isEmpty = removeSpace === '';
+    setIsActice(!isEmpty);
   };
 
   useEffect(() => {
@@ -130,9 +119,11 @@ const Feed = ({
           />
           <button
             id="commnetButton"
-            className={`commentSubmit ${submitBtnClassName}`}
+            className={`commentSubmit ${
+              isActice ? 'active-btn' : 'deactive-btn'
+            }`}
             type="submit"
-            disabled={isdisabled}
+            disabled={!isActice}
           >
             게시
           </button>
