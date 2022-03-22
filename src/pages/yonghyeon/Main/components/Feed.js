@@ -4,31 +4,26 @@ import Comment from './Comment';
 const Feed = ({ content, userName, photo, comments }) => {
   const [newComment, setNewComment] = useState(comments);
   const [input, setInput] = useState('');
-  console.log(content);
 
-  const test = e => {
+  const handleComment = e => {
     e.preventDefault();
 
     // 공백처리 정규화
     const blank = /^\s+|\s+$/g;
-
-    if (input === '') {
-      return;
-    }
     if (input.replace(blank, '') === '') {
       return;
     }
 
     // 댓글 기능
-    // const copyComment = [...comment];
-    // copyComment.push({
-    //   id: (comment.length += 1),
-    //   userName: 'yonghyeon',
-    //   content: input,
-    //   isLiked: false,
-    // });
-    // setNewComment(copyComment);
-    // setInput('');
+    const copyComment = [...newComment];
+    copyComment.push({
+      id: (newComment.length += 1),
+      userName: 'yonghyeon',
+      content: input,
+      isLiked: false,
+    });
+    setNewComment(copyComment);
+    setInput('');
   };
 
   return (
@@ -60,7 +55,6 @@ const Feed = ({ content, userName, photo, comments }) => {
         </div>
         <div className="sectionLeft__footer__like">
           <div className="like__img" />
-
           <span>sunny외 1명이 좋아합니다.</span>
         </div>
         <div className="feedMain">{content}</div>
@@ -68,9 +62,6 @@ const Feed = ({ content, userName, photo, comments }) => {
           <ul className="footer__comment">
             {newComment.map(item => {
               return <Comment key={item.id} {...item} />;
-              // name={item.userName}
-              // content={item.content}
-              // liked={item.isLiked}
             })}
           </ul>
         </div>
@@ -85,7 +76,7 @@ const Feed = ({ content, userName, photo, comments }) => {
                 setInput(e.target.value);
               }}
             />
-            <button onClick={test}>게시</button>
+            <button onClick={handleComment}>게시</button>
           </form>
         </div>
       </div>
@@ -93,4 +84,4 @@ const Feed = ({ content, userName, photo, comments }) => {
   );
 };
 
-export default Feed;
+export default React.memo(Feed);

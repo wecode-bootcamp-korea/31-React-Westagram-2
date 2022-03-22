@@ -5,9 +5,8 @@ import './MainYonghyeon.scss';
 
 const Main = () => {
   const [feed, setFeed] = useState([]);
-  const [comment, setComment] = useState([]);
-  let [input, setInput] = useState('');
 
+  //비동기 API
   const getData = async () => {
     const data = await fetch('./data/feedData.json').then(res => res.json());
     setFeed(data);
@@ -15,7 +14,6 @@ const Main = () => {
 
   useEffect(() => {
     getData();
-    console.log(feed);
   }, []);
 
   return (
@@ -24,7 +22,7 @@ const Main = () => {
       <section className="section">
         <div className="sectionFeed">
           {feed.map(item => {
-            return <Feed key={item.id} {...item} />;
+            return <Feed key={item.id} {...item} id={item.id} />;
           })}
         </div>
 
