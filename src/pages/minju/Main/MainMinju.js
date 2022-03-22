@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './MainMinju.scss';
-import Nav from './Nav/Nav';
+import Nav from '../../../components/Nav/Nav';
 import Feed from './Feed/Feed.js';
 import MainRight from './MainRight/MainRight';
 

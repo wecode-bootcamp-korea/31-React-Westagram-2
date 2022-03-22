@@ -1,12 +1,12 @@
 import React from 'react';
+import './Comment.scss';
 
-const Comment = ({ comment, username }) => {
+const Comment = ({ content, userName }) => {
   return (
     <div className="comment">
-      <span className="avatar__id">{username}</span>
-      <span>{comment}</span>
+      <span className="avatar__id">{userName}</span>
+      <span>{content}</span>
       <span className="feed__comment__reactions">
-        <i className="fa-solid fa-x" />
         <i className="fa-regular fa-heart" />
       </span>
     </div>

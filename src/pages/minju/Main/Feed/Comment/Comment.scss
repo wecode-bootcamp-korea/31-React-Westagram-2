@@ -1,0 +1,23 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/avatar.scss';
+
+.comment {
+  position: relative;
+  padding: 2px 15px;
+
+  span {
+    margin-right: 5px;
+  }
+
+  .feed__comment__reactions {
+    position: absolute;
+    right: 15px;
+    font-size: 12px;
+
+    .fa-x {
+      display: none;
+      margin-right: 3px;
+      font-size: 10px;
+    }
+  }
+}

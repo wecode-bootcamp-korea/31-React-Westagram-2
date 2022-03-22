@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react';
 import './Feed.scss';
-import Comment from './Comment';
+import Comment from './Comment/Comment';
 
-function Feed({
+const Feed = ({
   profileName,
   profileUrl,
   contentUrl,
   feedContent,
   commentList,
-}) {
+}) => {
   const [comment, setComment] = useState({
     id: '',
     userName: 'minjuKim',
@@ -16,11 +16,13 @@ function Feed({
     isLiked: true,
   });
 
-  const [commentsArr, setCommentsArr] = useState([...commentList]);
+  const [commentsArr, setCommentsArr] = useState(commentList);
+
   const commentInput = useRef();
 
   const handleChange = event => {
-    setComment(prevValue => ({ ...prevValue, content: event.target.value }));
+    const { value } = event.target;
+    setComment(prevValue => ({ ...prevValue, content: value }));
   };
 
   const handleSubmit = event => {
@@ -87,13 +89,7 @@ function Feed({
 
       <div className="feed__comments">
         {commentsArr.map(item => {
-          return (
-            <Comment
-              key={item.id}
-              comment={item.content}
-              username={item.userName}
-            />
-          );
+          return <Comment key={item.id} {...item} />;
         })}
       </div>
 
@@ -116,6 +112,6 @@ function Feed({
       </form>
     </article>
   );
-}
+};
 
 export default Feed;
