@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginJihyeon.scss';
 import { useNavigate } from 'react-router-dom';
 import MainJihyeon from '../Main/MainJihyeon';
@@ -22,11 +22,23 @@ function LoginJihyeon() {
       ? setCanSubmit(true)
       : setCanSubmit(false);
   };
-
   const submitLoginHandler = event => {
     event.preventDefault();
     if (canSubmit) {
-      alert('로그인 시도');
+      fetch('http://10.58.2.8:8000/users/signin', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: enteredId,
+          password: enteredPw,
+        }),
+      })
+        .then(response => response.json())
+        .then(response => {
+          if (response.access_token) {
+            localStorage.setItem('wtw-token', response.access_token);
+          }
+        });
+
       setEnteredId('');
       setEnteredPw('');
       setCanSubmit(false);
@@ -78,7 +90,6 @@ function LoginJihyeon() {
           아이디나 비밀번호를 잊으셨나요?
         </button>
       </form>
-
       {/* 모달창 바깥 보이게 */}
       <MainJihyeon />
     </div>

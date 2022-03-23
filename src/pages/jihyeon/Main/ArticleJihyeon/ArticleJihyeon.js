@@ -1,20 +1,24 @@
 import './ArticleJihyeon.scss';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const ArticleJihyeon = props => {
   const replyWriter = props.article.replyWriterNickName;
   const replyContent = props.article.replyContent;
+
+  const articleContent = props.article.articleContent;
+  const articleId = props.article.articleWriterId;
+  const articleWriterNickname = props.article.articleWriterNickname;
 
   return (
     <article className="articleJihyeon">
       <section className="articleProfile">
         <img
           className="articleProfilePhoto"
-          src={`images/jihyeon/profilePhoto/profPhoto${props.article.articleWriterId}.jpg`}
+          src={`images/jihyeon/profilePhoto/profPhoto${articleId}.jpg`}
           alt="image load error"
         />
         <span className="articleProfileName" />
-        {props.article.articleWriterNickname}
+        {articleWriterNickname}
         <span />
         <button className="articleProfileOptBtn">
           <img
@@ -25,14 +29,15 @@ const ArticleJihyeon = props => {
       </section>
       <section className="articlePhotoArea">
         <img
-          src={`images/jihyeon/articlePhoto/articlePhoto${props.article.articleWriterId}.avif`}
+          className="articlePhotoArea"
+          src={`images/jihyeon/articlePhoto/articlePhoto${articleId}.avif`}
           className="articlePhoto"
           alt="image load error"
         />
       </section>
 
       <section className="articleTextContent">
-        <p>{props.article.articleContent}</p>
+        <p>{articleContent}</p>
       </section>
 
       <section className="articleBtnArea">
@@ -64,12 +69,12 @@ const ArticleJihyeon = props => {
       <section className="articleReplyArea">
         <ul className="replyWriterArea">
           {replyWriter.map(nick => (
-            <li key={replyWriter}>{nick}</li>
+            <li>{nick}</li>
           ))}
         </ul>
         <ul className="replyContentArea">
           {replyContent.map(content => (
-            <li key={replyWriter}>{content}</li>
+            <li>{content}</li>
           ))}
         </ul>
       </section>
@@ -79,8 +84,6 @@ const ArticleJihyeon = props => {
           type="text"
           className="articleInsertReplyContent"
           placeholder="댓글 달기.."
-          // onChange={replyNowHandler}
-          // value={replyNow}
         />
         <button type="submit" className="articleInsertReplyBtn">
           <span>게시</span>
