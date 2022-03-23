@@ -6,6 +6,7 @@
     "userLocation": "wecode",
     "content": "my name is Moon",
     "thumbnail": "images/hyeseong/otterImage.jpg",
+    "likesCount": 15,
     "commentList": [
       {
         "id": 1,
@@ -34,6 +35,7 @@
     "userLocation": "서울 어딘가",
     "content": "2번 피드",
     "thumbnail": "images/hyeseong/thumbnail1.jpg",
+    "likesCount": 10,
     "commentList": [
       {
         "id": 1,
@@ -62,6 +64,7 @@
     "userLocation": "LA",
     "content": "3번 피드",
     "thumbnail": "images/hyeseong/thumbnail2.jpg",
+    "likesCount": 35,
     "commentList": [
       {
         "id": 1,
@@ -91,6 +94,7 @@
     "userLocation": "서울 어딘가",
     "content": "4번 피드",
     "thumbnail": "images/hyeseong/thumbnail4.jpg",
+    "likesCount": 52,
     "commentList": [
       {
         "id": 1,
@@ -119,6 +123,7 @@
     "userLocation": "숲속 어딘가",
     "content": "포로리야",
     "thumbnail": "images/hyeseong/bonoThumbnail2.jpeg",
+    "likesCount": 100,
     "commentList": [
       {
         "id": 1,

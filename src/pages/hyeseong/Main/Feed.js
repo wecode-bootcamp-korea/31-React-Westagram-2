@@ -10,6 +10,7 @@ const Feed = ({
     userLocation,
     content,
     thumbnail,
+    likesCount,
     commentList,
   },
 }) => {
@@ -74,7 +75,7 @@ const Feed = ({
           <img alt="likes-count-profile" src="images/hyeseong/핑구.jpeg" />
           <span>aineworld</span>
           님&nbsp;
-          <span>외 10명</span>이 좋아합니다
+          <span>외 {likesCount}명</span>이 좋아합니다
         </div>
         <div className="posterCommnets">
           <div className="comments">
