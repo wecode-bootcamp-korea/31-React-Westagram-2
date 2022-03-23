@@ -69,12 +69,12 @@ const ArticleJihyeon = props => {
       <section className="articleReplyArea">
         <ul className="replyWriterArea">
           {replyWriter.map((nick, index) => (
-            <li className={index}>{nick}</li>
+            <li key={index}>{nick}</li>
           ))}
         </ul>
         <ul className="replyContentArea">
           {replyContent.map((content, index) => (
-            <li className={index}>{content}</li>
+            <li key={index}>{content}</li>
           ))}
         </ul>
       </section>
