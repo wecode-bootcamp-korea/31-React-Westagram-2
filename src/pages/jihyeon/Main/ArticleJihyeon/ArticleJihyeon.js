@@ -1,21 +1,19 @@
 import './ArticleJihyeon.scss';
 import React from 'react';
 
-const ArticleJihyeon = props => {
-  const {
-    replyWriterNickName: replyWriter,
-    replyContent,
-    articleContent,
-    articleWriterId: articleId,
-    articleWriterNickname,
-  } = props.article;
-
+const ArticleJihyeon = ({
+  replyWriterNickName,
+  replyContent,
+  articleContent,
+  articleWriterId,
+  articleWriterNickname,
+}) => {
   return (
     <article className="articleJihyeon">
       <section className="articleProfile">
         <img
           className="articleProfilePhoto"
-          src={`images/jihyeon/profilePhoto/profPhoto${articleId}.jpg`}
+          src={`images/jihyeon/profilePhoto/profPhoto${articleWriterId}.jpg`}
           alt="/images/jihyeon/cross.png"
         />
         <span className="articleProfileName" />
@@ -30,7 +28,7 @@ const ArticleJihyeon = props => {
       </section>
       <section className="articlePhotoArea">
         <img
-          src={`images/jihyeon/articlePhoto/articlePhoto${articleId}.avif`}
+          src={`images/jihyeon/articlePhoto/articlePhoto${articleWriterId}.avif`}
           className="articlePhoto"
           alt="/images/jihyeon/cross.png"
         />
@@ -68,7 +66,7 @@ const ArticleJihyeon = props => {
 
       <section className="articleReplyArea">
         <ul className="replyWriterArea">
-          {replyWriter.map((nick, index) => (
+          {replyWriterNickName.map((nick, index) => (
             <li key={index}>{nick}</li>
           ))}
         </ul>

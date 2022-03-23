@@ -24,7 +24,8 @@ const MainJihyeon = () => {
         {articleInfo.map(articleInfo => (
           <ArticleJihyeon
             key={articleInfo.articleWriterId}
-            article={articleInfo}
+            // article={articleInfo}
+            {...articleInfo}
           />
         ))}
       </div>
