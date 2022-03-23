@@ -2,12 +2,13 @@ import './ArticleJihyeon.scss';
 import React from 'react';
 
 const ArticleJihyeon = props => {
-  const replyWriter = props.article.replyWriterNickName;
-  const replyContent = props.article.replyContent;
-
-  const articleContent = props.article.articleContent;
-  const articleId = props.article.articleWriterId;
-  const articleWriterNickname = props.article.articleWriterNickname;
+  const {
+    replyWriterNickName: replyWriter,
+    replyContent,
+    articleContent,
+    articleWriterId: articleId,
+    articleWriterNickname,
+  } = props.article;
 
   return (
     <article className="articleJihyeon">
@@ -29,7 +30,6 @@ const ArticleJihyeon = props => {
       </section>
       <section className="articlePhotoArea">
         <img
-          className="articlePhotoArea"
           src={`images/jihyeon/articlePhoto/articlePhoto${articleId}.avif`}
           className="articlePhoto"
           alt="image load error"
@@ -68,13 +68,13 @@ const ArticleJihyeon = props => {
 
       <section className="articleReplyArea">
         <ul className="replyWriterArea">
-          {replyWriter.map(nick => (
-            <li>{nick}</li>
+          {replyWriter.map((nick, index) => (
+            <li className={index}>{nick}</li>
           ))}
         </ul>
         <ul className="replyContentArea">
-          {replyContent.map(content => (
-            <li>{content}</li>
+          {replyContent.map((content, index) => (
+            <li className={index}>{content}</li>
           ))}
         </ul>
       </section>
