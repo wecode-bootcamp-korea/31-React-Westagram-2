@@ -16,7 +16,7 @@ const ArticleJihyeon = props => {
         <img
           className="articleProfilePhoto"
           src={`images/jihyeon/profilePhoto/profPhoto${articleId}.jpg`}
-          alt="image load error"
+          alt="/images/jihyeon/cross.png"
         />
         <span className="articleProfileName" />
         {articleWriterNickname}
@@ -24,7 +24,7 @@ const ArticleJihyeon = props => {
         <button className="articleProfileOptBtn">
           <img
             src="images/jihyeon/articleMenuBtn.png"
-            alt="article option button"
+            alt="/images/jihyeon/cross.png"
           />
         </button>
       </section>
@@ -32,7 +32,7 @@ const ArticleJihyeon = props => {
         <img
           src={`images/jihyeon/articlePhoto/articlePhoto${articleId}.avif`}
           className="articlePhoto"
-          alt="image load error"
+          alt="/images/jihyeon/cross.png"
         />
       </section>
 
@@ -59,7 +59,7 @@ const ArticleJihyeon = props => {
         <img
           className="whoFirstLikePhoto"
           src="images/jihyeon/fullRedHeart.png"
-          alt="first like person's photo"
+          alt="/images/jihyeon/cross.png"
         />
         <span className="infoLikeWho">
           첫번째 좋아요 닉네임외의 n명이 좋아합니다. lorem
