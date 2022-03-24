@@ -25,43 +25,43 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .loginForm__id,
-  .loginForm__pwd {
-    width: 300px;
-    margin: 4px;
-    padding: 12px;
-    background-color: $color-grey;
-    border: 1px solid $color-border-grey;
-    border-radius: 3px;
-  }
+    .loginForm__id,
+    .loginForm__pwd {
+      width: 300px;
+      margin: 4px;
+      padding: 12px;
+      background-color: $color-grey;
+      border: 1px solid $color-border-grey;
+      border-radius: 3px;
 
-  .loginForm__id::placeholder,
-  .loginForm__pwd::placeholder {
-    color: $color-dark-grey;
-  }
+      .loginForm__id::placeholder,
+      .loginForm__pwd::placeholder {
+        color: $color-dark-grey;
+      }
 
-  .loginForm__id:focus,
-  .loginForm__pwd:focus {
-    border-color: $color-dark-grey;
-  }
+      .loginForm__id:focus,
+      .loginForm__pwd:focus {
+        border-color: $color-dark-grey;
+      }
+    }
 
-  button {
-    opacity: 0.3;
-    width: 300px;
-    margin: 20px;
-    padding: 10px;
-    background-color: $color-blue;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    font-size: $font-weight-bold;
-    font-weight: 600;
-  }
+    button {
+      opacity: 0.3;
+      width: 300px;
+      margin: 20px;
+      padding: 10px;
+      background-color: $color-blue;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-size: $font-weight-bold;
+      font-weight: 600;
+    }
 
-  .valid {
-    opacity: 1;
+    .valid {
+      opacity: 1;
+    }
   }
 
   .forgotPasswordBtn {

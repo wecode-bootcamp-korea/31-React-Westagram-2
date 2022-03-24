@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import './Feed.scss';
 import Comment from './Comment/Comment';
+import './Feed.scss';
 
 const Feed = ({
   profileName,

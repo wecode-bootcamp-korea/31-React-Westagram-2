@@ -1,0 +1,18 @@
+@import '../../../styles/avatar.scss';
+
+.searchedItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  .avatar__description {
+    display: block;
+    margin-top: 2px;
+    color: var(--color-dark-grey);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+}

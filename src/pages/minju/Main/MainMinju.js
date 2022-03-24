@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './MainMinju.scss';
 import Nav from '../../../components/Nav/Nav';
-import Feed from './Feed/Feed.js';
 import MainRight from './MainRight/MainRight';
+import Feed from './Feed/Feed.js';
+import './MainMinju.scss';
 
 function Main() {
   const [feedArr, setFeedArr] = useState([]);

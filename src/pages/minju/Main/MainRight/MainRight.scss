@@ -6,7 +6,7 @@
   top: 100px;
   right: 0;
   width: 293px;
-  height: 100vh;
+  height: 70vh;
   padding: 0px 0px 30px;
 
   /* My ID */
@@ -69,11 +69,11 @@
       display: flex;
       align-items: center;
     }
-  }
 
-  .follow {
-    position: absolute;
-    right: -5px;
+    .follow {
+      position: absolute;
+      right: -5px;
+    }
   }
 
   .moreInfos {
@@ -85,10 +85,6 @@
         margin: 1px 0px;
       }
 
-      a {
-        color: $color-dark-grey;
-      }
-
       li::after {
         content: '·';
         margin-left: 2.75px;
@@ -97,6 +93,10 @@
 
       li:last-child::after {
         content: '';
+      }
+
+      a {
+        color: $color-dark-grey;
       }
     }
   }

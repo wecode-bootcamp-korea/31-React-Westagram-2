@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
-import './LoginMinju.scss';
 import { useNavigate } from 'react-router-dom';
+import './LoginMinju.scss';
 
 function LoginMinju() {
   const navigate = useNavigate();
   const goToMain = () => {
-    // 아이디에 @ 포함되어있고, 비밀번호가 5 글자 이상이면
+    // fetch('http://10.58.2.210:8000/users/signin', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: newInput.id,
+    //     password: newInput.password,
+    //   }),
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     if (res.message === 'SUCCESS') {
+    //       navigate('/main-minju');
+    //     } else {
+    //       alert('아이디와 비밀번호를 다시 확인해주세요.');
+    //     }
+    //   });
     navigate('/main-minju');
   };
 
