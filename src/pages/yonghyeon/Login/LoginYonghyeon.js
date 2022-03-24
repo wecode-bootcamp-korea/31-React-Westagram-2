@@ -21,8 +21,34 @@ const Login = () => {
     });
   };
 
-  const handleOnClick = () => {
-    navigate('/main-yonghyeon');
+  const handleOnClick = e => {
+    e.preventDefault();
+    if (isValid) {
+      fetch('http://10.58.1.220:8000/users/signin', {
+        method: 'POST',
+        body: JSON.stringify({
+          // name: '',
+          email: inputValue.id,
+          password: inputValue.pw,
+          // phone_number: '',
+        }),
+        // headers: { AUTHORIZATION: localStorage.getItem('westar-token') },
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.message === 'Invalid Email') {
+            return alert('이메일이 존재하지 않습니다.');
+          }
+          // if (data.message === 'fail') {
+          //   return alert('...');
+          // }
+          if (data.token) {
+            localStorage.setItem('강호님조', data.token);
+            navigate('/main-yonghyeon');
+          }
+        });
+    }
   };
 
   return (

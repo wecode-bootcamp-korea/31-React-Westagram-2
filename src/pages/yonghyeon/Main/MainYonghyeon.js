@@ -11,7 +11,6 @@ const Main = () => {
     const data = await fetch('./data/feedData.json').then(res => res.json());
     setFeed(data);
   };
-
   useEffect(() => {
     getData();
   }, []);
@@ -22,7 +21,7 @@ const Main = () => {
       <section className="section">
         <div className="sectionFeed">
           {feed.map(item => {
-            return <Feed key={item.id} {...item} id={item.id} />;
+            return <Feed key={item.id} {...item} />;
           })}
         </div>
 

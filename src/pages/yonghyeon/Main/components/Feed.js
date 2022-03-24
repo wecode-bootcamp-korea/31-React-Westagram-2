@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import Comment from './Comment';
 
 const Feed = ({ content, userName, photo, comments }) => {
@@ -14,17 +14,21 @@ const Feed = ({ content, userName, photo, comments }) => {
       return;
     }
 
-    // 댓글 기능
-    const copyComment = [...newComment];
-    copyComment.push({
-      id: (newComment.length += 1),
+    // 댓글 추가
+    const user = {
+      id: newComment.length + 1,
       userName: 'yonghyeon',
       content: input,
       isLiked: false,
-    });
-    setNewComment(copyComment);
+    };
+
+    setNewComment(prev => prev.concat(user));
     setInput('');
   };
+
+  const onChange = useCallback(e => {
+    setInput(e.target.value);
+  }, []);
 
   return (
     <section className="sectionLeft">
@@ -72,9 +76,7 @@ const Feed = ({ content, userName, photo, comments }) => {
               type="text"
               placeholder="댓글 달기..."
               value={input}
-              onChange={e => {
-                setInput(e.target.value);
-              }}
+              onChange={onChange}
             />
             <button onClick={handleComment}>게시</button>
           </form>
