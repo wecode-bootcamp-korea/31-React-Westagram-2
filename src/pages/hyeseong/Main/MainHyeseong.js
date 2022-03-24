@@ -17,14 +17,14 @@ const MainHyeseong = () => {
   return (
     <div className="MainHyeseong">
       <Nav />
-      <article className="mainContents">
-        <article className="feeds">
+      <section className="mainContents">
+        <section className="feeds">
           <article className="postContainer">
             {feeds.map(feed => {
               return <Feed key={feed.id} feed={feed} />;
             })}
           </article>
-          <article className="mainRight">
+          <aside className="mainRight">
             <div className="user-cell" id="rigth-user-cell">
               <img
                 alt="user-profile-img"
@@ -87,9 +87,9 @@ const MainHyeseong = () => {
               개인정보처리방침 • 약관 • 위치 • 인기 계정 • 해시태그 • 언어
               <p>© 2022 WESTAGRAM FROM WECODE</p>
             </footer>
-          </article>
-        </article>
-      </article>
+          </aside>
+        </section>
+      </section>
     </div>
   );
 };
