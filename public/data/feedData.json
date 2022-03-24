@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "userProfileImg": "/images/hyeseong/otter.png",
+    "userName": "moooo_nhs",
+    "userLocation": "wecode",
+    "content": "my name is Moon",
+    "thumbnail": "images/hyeseong/otterImage.jpg",
+    "likesCount": 15,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userProfileImg": "/images/hyeseong/otter.png",
+    "userName": "joonsikyang",
+    "userLocation": "서울 어딘가",
+    "content": "2번 피드",
+    "thumbnail": "images/hyeseong/thumbnail1.jpg",
+    "likesCount": 10,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "codeWe",
+        "content": "Welcome to seoul",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsik",
+        "content": "Hi",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jay",
+        "content": "Hey there.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userProfileImg": "/images/hyeseong/otter.png",
+    "userName": "jayPark",
+    "userLocation": "LA",
+    "content": "3번 피드",
+    "thumbnail": "images/hyeseong/thumbnail2.jpg",
+    "likesCount": 35,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Welcome",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey. Welcome",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "userProfileImg": "/images/hyeseong/otter.png",
+    "userName": "jayPark",
+    "userLocation": "서울 어딘가",
+    "content": "4번 피드",
+    "thumbnail": "images/hyeseong/thumbnail4.jpg",
+    "likesCount": 52,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "cpu",
+        "content": "hello world!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userProfileImg": "/images/hyeseong/bonobono.jpeg",
+    "userName": "보노보노",
+    "userLocation": "숲속 어딘가",
+    "content": "포로리야",
+    "thumbnail": "images/hyeseong/bonoThumbnail2.jpeg",
+    "likesCount": 100,
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "포로리",
+        "content": "왜 보노보노야",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "너부리",
+        "content": "나도 간다 ",
+        "isLiked": false
+      }
+    ]
+  }
+]
