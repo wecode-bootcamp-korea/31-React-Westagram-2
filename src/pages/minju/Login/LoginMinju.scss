@@ -35,13 +35,11 @@ body {
       border: 1px solid $color-border-grey;
       border-radius: 3px;
 
-      .loginForm__id::placeholder,
-      .loginForm__pwd::placeholder {
+      &:placeholder {
         color: $color-dark-grey;
       }
 
-      .loginForm__id:focus,
-      .loginForm__pwd:focus {
+      &:focus {
         border-color: $color-dark-grey;
       }
     }

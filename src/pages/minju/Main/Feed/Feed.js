@@ -16,7 +16,7 @@ const Feed = ({
     isLiked: true,
   });
 
-  const [commentsArr, setCommentsArr] = useState(commentList);
+  const [commentsArr, setCommentsArr] = useState([]);
 
   const commentInput = useRef();
 
@@ -31,9 +31,7 @@ const Feed = ({
       commentInput.current.focus();
       return;
     }
-    let dataId = commentsArr.length + 1;
-    const newComment = { ...comment, id: dataId++ };
-    setCommentsArr(prevComments => [...prevComments, newComment]);
+    setCommentsArr(prevComments => [...prevComments, comment]);
     setComment(prevValue => ({ ...prevValue, content: '' }));
   };
 

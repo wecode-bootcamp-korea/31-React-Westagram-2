@@ -4,41 +4,44 @@ import './LoginMinju.scss';
 
 function LoginMinju() {
   const navigate = useNavigate();
-  const goToMain = () => {
-    // fetch('http://10.58.2.210:8000/users/signin', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     email: newInput.id,
-    //     password: newInput.password,
-    //   }),
-    // })
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     if (res.message === 'SUCCESS') {
-    //       navigate('/main-minju');
-    //     } else {
-    //       alert('아이디와 비밀번호를 다시 확인해주세요.');
-    //     }
-    //   });
-    navigate('/main-minju');
-  };
-
   const [newInput, setNewInput] = useState({
     id: '',
     password: '',
   });
+  let isValid = newInput.id.includes('@') && newInput.password.length > 4;
 
   const handleInput = event => {
     const { name, value } = event.target;
     setNewInput(prevValue => ({ ...prevValue, [name]: value }));
   };
 
-  let isValid = newInput.id.includes('@') && newInput.password.length > 4;
+  const handleSubmit = event => {
+    event.preventDefault();
+    isValid
+      ? // TODO : 서버와 통신과정 필요할 시 추가하기
+        // fetch('http://10.58.2.210:8000/users/signin', {
+        //   method: 'POST',
+        //   body: JSON.stringify({
+        //     email: newInput.id,
+        //     password: newInput.password,
+        //   }),
+        // })
+        //   .then(res => res.json())
+        //   .then(res => {
+        //     if (res.message === 'SUCCESS') {
+        //       navigate('/main-minju');
+        //     } else {
+        //       alert('아이디와 비밀번호를 다시 확인해주세요.');
+        //     }
+        //   });
+        navigate('/main-minju')
+      : alert('아이디와 비밀번호를 확인해주세요');
+  };
 
   return (
     <div className="login">
       <h1 className="logo">Westagram</h1>
-      <form className="loginForm">
+      <form className="loginForm" onSubmit={handleSubmit}>
         <input
           name="id"
           value={newInput.id}
@@ -57,13 +60,7 @@ function LoginMinju() {
           placeholder="비밀번호"
           type="password"
         />
-        <button
-          onClick={goToMain}
-          className={isValid ? 'valid' : ''}
-          disabled={!isValid}
-        >
-          로그인
-        </button>
+        <button className={isValid ? 'valid' : ''}>로그인</button>
       </form>
       <span className="forgotPasswordBtn">비밀번호를 잊으셨나요?</span>
     </div>
