@@ -31,6 +31,19 @@ const Feed = ({
       commentInput.current.focus();
       return;
     }
+    fetch('http://10.58.4.193:8000/postings/comments', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzN9.656GpXLMIpyhK0bPI0PajKbHXKrpwDi6Lj7ajWc31uY',
+      },
+      body: JSON.stringify({
+        text: comment.content,
+        postId: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => setComment({ ...comment, id: res.message }));
     setCommentsArr(prevComments => [...prevComments, comment]);
     setComment(prevValue => ({ ...prevValue, content: '' }));
   };
