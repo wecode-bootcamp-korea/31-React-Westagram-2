@@ -1,11 +1,11 @@
 import React from 'react';
 import './NewPost.scss';
 
-const NewPost = () => {
+const NewPost = ({ openPostToggle }) => {
   return (
     <div className="newPost">
       <div className="overlay">
-        <i className="fa-solid fa-x" />
+        <i className="fa-solid fa-x" onClick={openPostToggle} />
       </div>
       <div className="newPostBody">
         <header>

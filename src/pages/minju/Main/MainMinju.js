@@ -7,6 +7,7 @@ import NewPost from '../../../components/Nav/NewPost/NewPost';
 
 function Main() {
   const [feedArr, setFeedArr] = useState([]);
+  const [postToggleOpen, setPostToggleOpen] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json', {
@@ -18,10 +19,14 @@ function Main() {
       });
   }, []);
 
+  const openPostToggle = () => {
+    setPostToggleOpen(!postToggleOpen);
+  };
+
   return (
     <>
-      <Nav />
-      {/* <NewPost /> */}
+      <Nav openPostToggle={openPostToggle} />
+      {postToggleOpen ? <NewPost openPostToggle={openPostToggle} /> : ''}
       <main className="main">
         <div className="main__left">
           {feedArr.map(item => {

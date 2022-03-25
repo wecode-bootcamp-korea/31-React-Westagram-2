@@ -3,10 +3,9 @@ import SearchedItem from './SearchedItem/SearchedItem';
 import NoResult from './SearchedItem/NoResult';
 import './Nav.scss';
 
-function Nav() {
+function Nav({ openPostToggle }) {
   const [searchArr, setSearchArr] = useState([]);
   const [keyword, setKeyword] = useState('');
-  const [newPostBtn, setNewPostBtn] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/idData.json', {
@@ -28,7 +27,7 @@ function Nav() {
   const hasValue = searchedArr.length > 0;
 
   const handleClick = () => {
-    setNewPostBtn(!newPostBtn);
+    openPostToggle();
   };
 
   return (
