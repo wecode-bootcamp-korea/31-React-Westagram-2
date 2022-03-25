@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SearchedItem from './SearchedItem/SearchedItem';
+import NoResult from './SearchedItem/NoResult';
 import './Nav.scss';
 
 function Nav() {
-  const [originalUserData, setOriginalUserData] = useState([]);
   const [searchArr, setSearchArr] = useState([]);
   const [keyword, setKeyword] = useState('');
+  const [newPostBtn, setNewPostBtn] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/idData.json', {
@@ -13,20 +14,22 @@ function Nav() {
     })
       .then(res => res.json())
       .then(data => {
-        setOriginalUserData(data);
+        setSearchArr(data);
       });
   }, []);
 
   const handleChange = event => {
     const { value } = event.target;
     setKeyword(value);
-    let searchedArr = originalUserData.filter(item =>
-      item.userId.includes(value)
-    );
-    setSearchArr(searchedArr);
   };
 
-  let showToggle = keyword.length >= 1;
+  let showSearchResult = keyword.length >= 1;
+  let searchedArr = searchArr.filter(item => item.userId.includes(keyword));
+  const hasValue = searchedArr.length > 0;
+
+  const handleClick = () => {
+    setNewPostBtn(!newPostBtn);
+  };
 
   return (
     <nav className="nav">
@@ -47,22 +50,25 @@ function Nav() {
         <div className="navbar__moreFunctions">
           <button>
             {' '}
-            <i className="fa-solid fa-square-plus" />
+            <i className="fa-solid fa-square-plus" onClick={handleClick} />
           </button>
           <i className="fa-regular fa-compass" />
           <i className="fa-regular fa-heart" />
           <i className="fas fa-regular fa-user-large" />
         </div>
-
         <div
           className="searchToggle"
-          style={showToggle ? { display: 'block' } : { display: 'none' }}
+          style={showSearchResult ? { display: 'block' } : { display: 'none' }}
         >
           <div className="toggle__arrow" />
           <div className="searched__items">
-            {searchArr.map(item => {
-              return <SearchedItem key={item.id} {...item} />;
-            })}
+            {hasValue ? (
+              searchedArr.map(item => {
+                return <SearchedItem key={item.id} {...item} />;
+              })
+            ) : (
+              <NoResult />
+            )}
           </div>
         </div>
       </div>

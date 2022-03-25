@@ -3,6 +3,7 @@ import Nav from '../../../components/Nav/Nav';
 import MainRight from './MainRight/MainRight';
 import Feed from './Feed/Feed.js';
 import './MainMinju.scss';
+import NewPost from '../../../components/Nav/NewPost/NewPost';
 
 function Main() {
   const [feedArr, setFeedArr] = useState([]);
@@ -20,6 +21,7 @@ function Main() {
   return (
     <>
       <Nav />
+      {/* <NewPost /> */}
       <main className="main">
         <div className="main__left">
           {feedArr.map(item => {

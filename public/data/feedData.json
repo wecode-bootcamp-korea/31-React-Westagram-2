@@ -1,0 +1,37 @@
+[
+  {
+    "postId": 1,
+    "commeentid": 1,
+    "commentuserName": "fakeId",
+    "commenttext": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "postId": 1,
+    "id": 1,
+    "userName": "fakeId",
+    "text": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "postId": 2,
+    "id": 1,
+    "userName": "fakeId",
+    "text": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "postId": 2,
+    "id": 1,
+    "userName": "fakeId",
+    "text": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "postId": 2,
+    "id": 1,
+    "userName": "fakeId",
+    "text": "Mock Up data입니다!",
+    "isLiked": true
+  }
+]
