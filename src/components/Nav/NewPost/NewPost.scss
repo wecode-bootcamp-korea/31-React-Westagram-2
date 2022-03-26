@@ -1,0 +1,145 @@
+@import '../../../styles/variables.scss';
+
+.newPost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  overflow-y: hidden;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .fa-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.newPostBody {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 850px;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+    border-bottom: 1px solid $color-border-grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    .goBackArrow {
+      width: 33%;
+      font-size: 25px;
+    }
+
+    .text {
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .shareBtnBox {
+      width: 33%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: $color-blue;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .postForm {
+    margin: 0px;
+    display: flex;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .imgContainer {
+    width: 60%;
+    height: 450px;
+    border-right: 1px solid $color-border-grey;
+  }
+
+  .textContainer {
+    padding: 10px 2px;
+    width: 400px;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    padding: 5px 0px 10px 10px;
+  }
+
+  .profileImg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid $color-dark-grey;
+  }
+
+  .profileName {
+    font-weight: 600;
+  }
+
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+  }
+
+  .emojiAndTextContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid $color-border-grey;
+  }
+
+  .fa-face-smile {
+    color: $color-dark-grey;
+    font-size: 18px;
+  }
+
+  .textCounter span {
+    font-size: 12px;
+    color: $color-dark-grey;
+  }
+}

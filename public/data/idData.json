@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "userId": "wecode_bootcamp",
+    "description": ">wecode | 위코드",
+    "src": "/images/minju/wecode.png"
+  },
+  {
+    "id": 2,
+    "userId": "wecode_founder",
+    "description": "송은우 (Eun Woo Song)",
+    "src": "/images/minju/wecodeFounder.png"
+  },
+  {
+    "id": 3,
+    "userId": "wecode_git",
+    "description": "",
+    "src": "/images/minju/wecodegit.png"
+  },
+  {
+    "id": 4,
+    "userId": "wecode_korea",
+    "description": "강남구 테헤란로 427, 서울",
+    "src": "/images/minju/noimage.jpeg"
+  },
+  {
+    "id": 5,
+    "userId": "mjuuu.k",
+    "description": "Front-end developer",
+    "src": "/images/minju/wecode.png"
+  },
+  {
+    "id": 6,
+    "userId": "mjuu.b",
+    "description": "love cooking",
+    "src": "/images/minju/wecode.png"
+  },
+  {
+    "id": 7,
+    "userId": "nyangwe",
+    "description": "nyangnyang We",
+    "src": "/images/minju/wecode.png"
+  },
+  {
+    "id": 8,
+    "userId": "dangdang_we",
+    "description": "DangDang We",
+    "src": "/images/minju/wecode.png"
+  }
+]

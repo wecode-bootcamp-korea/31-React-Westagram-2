@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "postId": 1,
+    "profileName": "userNumber1",
+    "profileUrl": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1558486012-817176f84c6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=670&q=80",
+    "feedContent": "hey~ this is a mock up data super cool!!",
+    "commeentId": 1,
+    "commentUserName": "fakeId",
+    "commentText": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "postId": 1,
+    "profileName": "userNumber2",
+    "profileUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "feedContent": "this is another mockup data!",
+    "commeentId": 2,
+    "commentUserName": "fakeId",
+    "commentText": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "id": 3,
+    "postId": 2,
+    "profileName": "userNumber2",
+    "profileUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "feedContent": "this is another mockup data!",
+    "commeentId": 2,
+    "commentUserName": "fakeId",
+    "commentText": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "id": 4,
+    "postId": 2,
+    "profileName": "userNumber2",
+    "profileUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "feedContent": "this is another mockup data!",
+    "commeentId": 3,
+    "commentUserName": "fakeId",
+    "commentText": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "id": 5,
+    "postId": 2,
+    "profileName": "userNumber2",
+    "profileUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "feedContent": "this is another mockup data!",
+    "commeentId": 5,
+    "commentUserName": "fakeId",
+    "commentText": "Mock Up data입니다!",
+    "isLiked": true
+  },
+  {
+    "postId": 3,
+    "profileName": "userNumber2",
+    "profileUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "feedContent": "this is another mockup data!",
+    "commeentId": 1,
+    "commentUserName": "fakeId",
+    "commentText": "Mock Up data입니다!",
+    "isLiked": true
+  }
+]

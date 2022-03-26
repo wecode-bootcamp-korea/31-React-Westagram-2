@@ -1,0 +1,100 @@
+[
+  {
+    "postId": 1,
+    "profileName": "userNumber1",
+    "profileUrl": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1558486012-817176f84c6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=670&q=80",
+    "feedContent": "hey~ this is a mock up data super cool!!",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "minju",
+        "content": "위코드 화이팅!!! Mock data 작업 너무 재밌당 ✋",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "wonbin",
+        "content": "백엔드의 황제",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "booyoon",
+        "content": "리액트 너무 재밌다 👍",
+        "isLiked": false
+      },
+      {
+        "id": 4,
+        "userName": "hyojeong",
+        "content": "화이팅!!!! 💗",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "postId": 2,
+    "profileName": "userNumber2",
+    "profileUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "feedContent": "this is another mockup data!",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "seoYoung",
+        "content": "나 그런말 하고싶지 않은데!!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "hyeseong",
+        "content": "내가 최고지~~",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "yonghyeon",
+        "content": "리액트 너무신기해 💯",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "postId": 3,
+    "profileName": "userNumber3",
+    "profileUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "feedContent": "third mock up data!!!!",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "usernewuser",
+        "content": "세번째 댓글! ✋",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "thistisme",
+        "content": "완전 짱짱!",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "kyuhyeon",
+        "content": "양치하러갈꺼야 👍",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "postId": 4,
+    "profileName": "userNumber4",
+    "profileUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+    "contentUrl": "https://images.unsplash.com/photo-1508020963102-c6c723be5764?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "feedContent": "third mock up data!!!!",
+    "commentList": []
+  }
+]
