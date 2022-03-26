@@ -6,7 +6,7 @@ import './MainMinju.scss';
 import NewPost from '../../../components/Nav/NewPost/NewPost';
 
 function Main() {
-  const [feedArr, setFeedArr] = useState([]);
+  const [data, setData] = useState([]);
   const [postToggleOpen, setPostToggleOpen] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Main() {
     })
       .then(res => res.json())
       .then(data => {
-        setFeedArr(data);
+        setData(data);
       });
   }, []);
 
@@ -23,14 +23,33 @@ function Main() {
     setPostToggleOpen(!postToggleOpen);
   };
 
+  // const uploadImage = e => {
+  //   const files = e.target.files;
+  //   const data = new FormData();
+  //   data.append('file', files[0]);
+  //   setLoading(true);
+  //   fetch('http://', {
+  //     method: 'POST',
+  //     body: data,
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => setImage(res))
+  //     .then(setLoading(false));
+  //   console.log(data);
+  // };
+
   return (
     <>
       <Nav openPostToggle={openPostToggle} />
-      {postToggleOpen ? <NewPost openPostToggle={openPostToggle} /> : ''}
+      {postToggleOpen ? (
+        <NewPost openPostToggle={openPostToggle} setData={setData} />
+      ) : (
+        ''
+      )}
       <main className="main">
         <div className="main__left">
-          {feedArr.map(item => {
-            return <Feed key={item.userId} {...item} />;
+          {data.map(item => {
+            return <Feed key={item.postId} {...item} />;
           })}
         </div>
         <MainRight />

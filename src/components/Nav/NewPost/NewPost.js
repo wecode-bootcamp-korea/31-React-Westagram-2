@@ -1,7 +1,31 @@
 import React from 'react';
 import './NewPost.scss';
 
-const NewPost = ({ openPostToggle }) => {
+const NewPost = ({ openPostToggle, loading, image, setData }) => {
+  const handleClick = () => {
+    alert('새 글을 올리시겠습니까?');
+    fetch('http://dkjfkslkdjfs.com', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzN9.656GpXLMIpyhK0bPI0PajKbHXKrpwDi6Lj7ajWc31uY',
+      },
+      body: JSON.stringify({
+        text: '새로운 글 작성',
+        url: 'https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80',
+      }),
+    })
+      .then(res => res.json())
+      .then(
+        fetch('http://flskdjflskjdf', { method: 'GET' })
+          .then(res => res.json())
+          .then(data => {
+            setData(data);
+          })
+      );
+    openPostToggle();
+  };
+
   return (
     <div className="newPost">
       <div className="overlay">
@@ -16,17 +40,26 @@ const NewPost = ({ openPostToggle }) => {
             <h4>새 게시물 만들기</h4>
           </div>
           <div className="shareBtnBox">
-            <button>공유하기</button>
+            <button onClick={handleClick}>공유하기</button>
           </div>
         </header>
         <form className="postForm">
           <div className="imgContainer">
-            <input type="file" />
+            <input type="file" name="file" placeholder="Upload an image" />
+            {/* {loading ? (
+              <h3>Loading...</h3>
+            ) : (
+              <img
+                alt="upload"
+                src="https://images.unsplash.com/photo-1436891620584-47fd0e565afb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                style={{ width: '300px' }}
+              />
+            )} */}
           </div>
           <div className="textContainer">
             <div className="profile">
               <div className="profileImg">
-                <img alt="profile" src="/images/minju/noimage.jpeg" />
+                <img alt="myProfile" src="/images/minju/noimage.jpeg" />
               </div>
               <div className="profileName">minjuKim</div>
             </div>

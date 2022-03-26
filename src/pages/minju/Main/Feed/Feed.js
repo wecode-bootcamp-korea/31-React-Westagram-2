@@ -3,6 +3,7 @@ import Comment from './Comment/Comment';
 import './Feed.scss';
 
 const Feed = ({
+  postId,
   profileName,
   profileUrl,
   contentUrl,
@@ -10,13 +11,14 @@ const Feed = ({
   commentList,
 }) => {
   const [comment, setComment] = useState({
+    postId: '',
     id: '',
     userName: 'minjuKim',
     content: '',
     isLiked: true,
   });
 
-  const [commentsArr, setCommentsArr] = useState([]);
+  const [commentsArr, setCommentsArr] = useState([...commentList]);
 
   const commentInput = useRef();
 
