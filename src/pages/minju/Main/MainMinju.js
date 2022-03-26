@@ -12,31 +12,19 @@ function Main() {
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json', {
       method: 'GET',
+      // TODO: 백엔드와 통신 시 사용하는 코드
+      // headers: {
+      //   Authorization:
+      //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjB9.fm3iykc49El7OIhJwW6AXRwdnscazvhQYlRSdoq3RV4',
+      // },
     })
       .then(res => res.json())
-      .then(data => {
-        setData(data);
-      });
+      .then(data => setData(data));
   }, []);
 
   const openPostToggle = () => {
     setPostToggleOpen(!postToggleOpen);
   };
-
-  // const uploadImage = e => {
-  //   const files = e.target.files;
-  //   const data = new FormData();
-  //   data.append('file', files[0]);
-  //   setLoading(true);
-  //   fetch('http://', {
-  //     method: 'POST',
-  //     body: data,
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => setImage(res))
-  //     .then(setLoading(false));
-  //   console.log(data);
-  // };
 
   return (
     <>
@@ -48,8 +36,8 @@ function Main() {
       )}
       <main className="main">
         <div className="main__left">
-          {data.map(item => {
-            return <Feed key={item.postId} {...item} />;
+          {data.map(feed => {
+            return <Feed key={feed.postId} feed={feed} />;
           })}
         </div>
         <MainRight />

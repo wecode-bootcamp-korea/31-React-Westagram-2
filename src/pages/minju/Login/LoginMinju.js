@@ -18,24 +18,21 @@ function LoginMinju() {
   const handleSubmit = event => {
     event.preventDefault();
     isValid
-      ? // TODO : 서버와 통신과정 필요할 시 추가하기
-        // fetch('http://10.58.2.210:8000/users/signin', {
-        //   method: 'POST',
-        //   body: JSON.stringify({
-        //     email: newInput.id,
-        //     password: newInput.password,
-        //   }),
-        // })
-        //   .then(res => res.json())
-        //   .then(res => {
-        //     if (res.message === 'SUCCESS') {
-        //       navigate('/main-minju');
-        //     } else {
-        //       alert('아이디와 비밀번호를 다시 확인해주세요.');
-        //     }
-        //   });
-        navigate('/main-minju')
+      ? navigate('/main-minju')
       : alert('아이디와 비밀번호를 확인해주세요');
+    //TODO : 백엔드와 통신시 사용하는 코드
+    // ? fetch('http://10.58.1.137:8000/users/signin', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //       email: newInput.id,
+    //       password: newInput.password,
+    //       name: '김민주',
+    //       phone_number: '010 0000 0000',
+    //     }),
+    //   })
+    //     .then(res => res.json())
+    //     .then(navigate('/main-minju'))
+    // : alert('아이디와 비밀번호를 확인해주세요');
   };
 
   return (

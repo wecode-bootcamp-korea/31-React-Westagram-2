@@ -4,26 +4,30 @@ import './NewPost.scss';
 const NewPost = ({ openPostToggle, loading, image, setData }) => {
   const handleClick = () => {
     alert('새 글을 올리시겠습니까?');
-    fetch('http://dkjfkslkdjfs.com', {
-      method: 'POST',
-      headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzN9.656GpXLMIpyhK0bPI0PajKbHXKrpwDi6Lj7ajWc31uY',
-      },
-      body: JSON.stringify({
-        text: '새로운 글 작성',
-        url: 'https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80',
-      }),
-    })
-      .then(res => res.json())
-      .then(
-        fetch('http://flskdjflskjdf', { method: 'GET' })
-          .then(res => res.json())
-          .then(data => {
-            setData(data);
-          })
-      );
     openPostToggle();
+    // TODO : 백엔드와 통신시 사용하는 코드
+    // fetch('http://10.58.1.137:8000/postings/post', {
+    //   method: 'POST',
+    //   headers: {
+    //     Authorization:
+    //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjB9.fm3iykc49El7OIhJwW6AXRwdnscazvhQYlRSdoq3RV4',
+    //   },
+    //   body: JSON.stringify({
+    //     content: '잘 들어오는지 확인! ',
+    //     image_url: '/images/minju/profile8.jpeg',
+    //   }),
+    // }).then(openPostToggle());
+    // fetch('http://10.58.0.151:8000/postings/post', {
+    //   method: 'GET',
+    //   headers: {
+    //     Authorization:
+    //       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.50Pzi-JKffvbRiSuQmxrOcu-c1CuqIy2z0hvLS4_yrs',
+    //   },
+    // })
+    //   .then(res => res.json())
+    //   .then(res => console.log(res))
+    //   .then(data => {
+    //     setData(data.Posting);
   };
 
   return (
@@ -46,15 +50,6 @@ const NewPost = ({ openPostToggle, loading, image, setData }) => {
         <form className="postForm">
           <div className="imgContainer">
             <input type="file" name="file" placeholder="Upload an image" />
-            {/* {loading ? (
-              <h3>Loading...</h3>
-            ) : (
-              <img
-                alt="upload"
-                src="https://images.unsplash.com/photo-1436891620584-47fd0e565afb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                style={{ width: '300px' }}
-              />
-            )} */}
           </div>
           <div className="textContainer">
             <div className="profile">

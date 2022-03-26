@@ -3,12 +3,14 @@ import Comment from './Comment/Comment';
 import './Feed.scss';
 
 const Feed = ({
-  postId,
-  profileName,
-  profileUrl,
-  contentUrl,
-  feedContent,
-  commentList,
+  feed: {
+    postId,
+    profileName,
+    profileUrl,
+    feedContent,
+    commentList,
+    contentUrl,
+  },
 }) => {
   const [comment, setComment] = useState({
     postId: '',
@@ -17,8 +19,7 @@ const Feed = ({
     content: '',
     isLiked: true,
   });
-
-  const [commentsArr, setCommentsArr] = useState([...commentList]);
+  const [comments, setComments] = useState([...commentList]);
 
   const commentInput = useRef();
 
@@ -46,7 +47,7 @@ const Feed = ({
     })
       .then(res => res.json())
       .then(res => setComment({ ...comment, id: res.message }));
-    setCommentsArr(prevComments => [...prevComments, comment]);
+    setComments(prevComments => [...prevComments, comment]);
     setComment(prevValue => ({ ...prevValue, content: '' }));
   };
 
@@ -102,7 +103,7 @@ const Feed = ({
       </div>
 
       <div className="feed__comments">
-        {commentsArr.map(item => {
+        {comments.map(item => {
           return (
             <Comment
               key={item.id}
